@@ -40,11 +40,9 @@ jobs:
         working-directory: ./workshop
 
   tests:
-    name: 🧪 Test
-    timeout-minutes: 10
+    name: 🎭 Test
+    timeout-minutes: 15
     runs-on: ubuntu-latest
-    # Use continue-on-error to ensure this job doesn't fail the workflow
-    continue-on-error: true
 
     steps:
       - name: ⬇️ Checkout repo
@@ -58,9 +56,21 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
 
-      - name: 🧪 Run tests
-        id: run_tests
-        run: node ./epicshop/test.js ..s
+      - name: 🎭 Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+        working-directory: ./epicshop
+
+      - name: 🎭 Run Playwright tests
+        run: npx playwright test
+        working-directory: ./epicshop
+
+      - name: 📤 Upload Playwright Report
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: epicshop/playwright-report/
+          retention-days: 30
 
   deploy:
     name: 🚀 Deploy
