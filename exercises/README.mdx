@@ -15,9 +15,42 @@ We'll cover:
 5. **Polymorphism** - Substitutability and why it matters
 6. **Composition vs Inheritance** - Practical decision-making
 
+## OOP vs Functional Programming
+
+TypeScript supports multiple paradigms. This workshop teaches OOP because it's
+valuable knowledge—you'll encounter it in many codebases and libraries. But you
+should know the alternative:
+
+**OOP organizes around objects** - data and behavior bundled together:
+
+```ts
+class ShoppingCart {
+	private items: Product[] = []
+	addItem(product: Product) {
+		this.items.push(product)
+	}
+	getTotal() {
+		return this.items.reduce((sum, p) => sum + p.price, 0)
+	}
+}
+```
+
+**FP organizes around functions** - data and transformations separate:
+
+```ts
+type Cart = readonly Product[]
+const addItem = (cart: Cart, product: Product): Cart => [...cart, product]
+const getTotal = (cart: Cart): number => cart.reduce((sum, p) => sum + p.price, 0)
+```
+
+**Both are valid.** OOP excels at encapsulation and polymorphism. FP excels at
+data transformation and immutability. Choose based on your problem domain.
+
 <callout-info>
-	OOP isn't about using classes everywhere—it's about organizing code so that
-	complexity is manageable and changes are isolated.
+	Pragmatism over purity! JavaScript isn't Haskell—no JS program is 100% purely
+	functional. If a class solves your problem elegantly, use it. The goal is to
+	have both tools in your toolkit and choose wisely. Modern React codebases
+	often lean functional, but many successful projects use classes too.
 </callout-info>
 
 By the end of this workshop, you'll be able to:
@@ -27,5 +60,6 @@ By the end of this workshop, you'll be able to:
 - Apply inheritance appropriately
 - Understand when to prefer composition
 - Write polymorphic code that's flexible and testable
+- **Make informed decisions** about when OOP or FP is the better fit
 
 Let's build some objects! 🧱

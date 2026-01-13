@@ -47,6 +47,32 @@ Use composition when:
 - You need to combine multiple behaviors
 - The relationship is "has-a" not "is-a"
 
+## Three Types of Composition
+
+1. **Inheritance** (is-a): `Dog extends Animal`
+2. **Object Composition** (has-a): `Car` has an `Engine`
+3. **Function Composition** (transforms): combine functions into pipelines
+
+```ts
+// Object composition (OOP)
+class EmailService {
+	constructor(private logger: Logger) {}
+	send(email: Email) {
+		this.logger.log('Sending...')
+		// ...
+	}
+}
+
+// Function composition (FP)
+const sendEmail = (logger: Logger) => (email: Email) => {
+	logger.log('Sending...')
+	// ...
+}
+```
+
+Both achieve the same goal—loose coupling and flexibility—through different
+mechanisms.
+
 ## When to Use Each
 
 **Inheritance:**
@@ -55,16 +81,17 @@ Use composition when:
 - `Circle` is a `Shape` ✅
 - `Manager` is an `Employee` ✅
 
-**Composition:**
+**Composition (object or function):**
 
 - `Car` has an `Engine` ✅
 - `Computer` has a `CPU` ✅
 - `User` has a `Profile` ✅
+- Data transformation pipelines ✅
 
 <callout-info>
-	Favor composition over inheritance when possible. Composition is more flexible
-	and easier to change. Use inheritance when you truly have an "is-a"
-	relationship.
+	Favor composition over inheritance when possible. Both object composition and
+	function composition are more flexible and easier to change than inheritance.
+	Use inheritance when you truly have an "is-a" relationship.
 </callout-info>
 
 In this exercise, you'll choose between composition and inheritance.

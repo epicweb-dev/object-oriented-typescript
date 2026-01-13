@@ -56,6 +56,35 @@ function printArea(shape: Shape) {
 printArea(new Circle(5)) // ✅ Circle is substitutable for Shape
 ```
 
+## Polymorphism: OOP vs FP
+
+OOP achieves polymorphism through class hierarchies. Functional programming
+achieves it through discriminated unions:
+
+```ts
+// OOP approach - class hierarchy
+abstract class Shape {
+	abstract area(): number
+}
+class Circle extends Shape {
+	area() {
+		return Math.PI * this.radius ** 2
+	}
+}
+
+// FP approach - discriminated union
+type Shape =
+	| { type: 'circle'; radius: number }
+	| { type: 'rectangle'; width: number; height: number }
+
+const area = (s: Shape) =>
+	s.type === 'circle' ? Math.PI * s.radius ** 2 : s.width * s.height
+```
+
+**OOP** is extensible: add new classes without changing existing code.
+**FP** makes all cases explicit: add a new variant and the compiler tells you
+everywhere you need to handle it.
+
 ## Benefits
 
 - **Flexibility** - Write code that works with multiple types

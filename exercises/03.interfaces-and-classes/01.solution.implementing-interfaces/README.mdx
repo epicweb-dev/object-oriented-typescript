@@ -6,3 +6,27 @@ they can be used interchangeably.
 🦉 The interface defines the contract (`pay()` method), and each class provides
 its own implementation. This allows different payment methods to work through the
 same interface.
+
+## Interfaces: Classes vs Functions
+
+Interfaces can define contracts for both classes and functions:
+
+```ts
+// OOP approach - interface with classes
+interface PaymentProcessor {
+	process(amount: number): boolean
+}
+class StripeProcessor implements PaymentProcessor {
+	process(amount: number) {
+		return true
+	}
+}
+
+// FP approach - function type
+type PaymentProcessor = (amount: number) => boolean
+const stripeProcessor: PaymentProcessor = (amount) => true
+```
+
+Both approaches achieve polymorphism—just through different mechanisms. The OOP
+approach bundles state and behavior; the FP approach keeps functions separate
+from data.

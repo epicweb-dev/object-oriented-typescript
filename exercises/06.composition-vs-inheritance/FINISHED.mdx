@@ -5,19 +5,26 @@
 You learned:
 
 - 🔗 **Inheritance** - "is-a" relationships, code reuse through hierarchy
-- 🧩 **Composition** - "has-a" relationships, combining behaviors
+- 🧩 **Object Composition** - "has-a" relationships, combining behaviors
+- 🔄 **Function Composition** - combining functions into pipelines (FP style)
 - 🎯 **When to use each** - Choose based on the relationship type
 - 💡 **Favor composition** - More flexible and easier to change
 
 🦉 Key differences:
 
 - **Inheritance**: Tight coupling, fixed at compile time, "is-a"
-- **Composition**: Loose coupling, flexible at runtime, "has-a"
+- **Composition**: Loose coupling, flexible at runtime, "has-a" or "transforms"
 
 💰 General rule: Use inheritance when you have a clear "is-a" relationship and
-want to share implementation. Use composition when you need flexibility or have
-a "has-a" relationship.
+want to share implementation. Use composition (object or function) when you need
+flexibility.
 
-🦉 Both are valuable tools—the key is choosing the right one for each situation.
+<callout-info>
+	OOP is a tool, not a religion. Many successful TypeScript codebases use a mix
+	of OOP and functional patterns. Use the right tool for each situation—sometimes
+	that's a class, sometimes it's a function, and often it's a combination.
+</callout-info>
 
-Congratulations! You've completed the Object-Oriented TypeScript workshop!
+Congratulations! You've completed the Object-Oriented TypeScript workshop! You
+now understand both OOP patterns and when functional alternatives might be a
+better fit.
