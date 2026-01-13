@@ -2,6 +2,7 @@
   "name": "exercises_05.polymorphism_01.solution.substitutability",
   "type": "module",
   "scripts": {
-    "start": "node index.ts"
+    "start": "node index.ts",
+    "test": "node --test index.test.ts"
   }
 }

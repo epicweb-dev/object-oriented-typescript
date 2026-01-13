@@ -2,6 +2,7 @@
   "name": "exercises_02.access-modifiers_02.problem.protected",
   "type": "module",
   "scripts": {
-    "start": "node index.ts"
+    "start": "node index.ts",
+    "test": "node --test index.test.ts"
   }
 }

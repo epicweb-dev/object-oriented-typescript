@@ -61,14 +61,6 @@ function printTestSummary(results) {
 
 async function main() {
 	const allApps = await getApps()
-	const allAppsWithTests = allApps.filter((app) => app.test?.type === 'script')
-
-	if (allAppsWithTests.length === 0) {
-		console.error(
-			'❌ No apps with tests were found. Ensure your apps have a test script defined in the package.json. Exiting.',
-		)
-		process.exit(1)
-	}
 
 	let selectedApps
 	let additionalArgs = []
@@ -82,7 +74,7 @@ async function main() {
 
 	if (process.argv[2]) {
 		const patterns = process.argv[2].toLowerCase().split(',')
-		selectedApps = allAppsWithTests.filter((app) => {
+		selectedApps = allApps.filter((app) => {
 			const { exerciseNumber, stepNumber, type } = app
 
 			return patterns.some((pattern) => {
@@ -103,10 +95,7 @@ async function main() {
 		})
 	} else {
 		const displayNameMap = new Map(
-			allAppsWithTests.map((app) => [
-				getAppDisplayName(app, allAppsWithTests),
-				app,
-			]),
+			allApps.map((app) => [getAppDisplayName(app, allApps), app]),
 		)
 		const choices = displayNameMap.keys()
 
@@ -122,14 +111,14 @@ async function main() {
 		})
 
 		selectedApps = response.appDisplayNames.includes('All')
-			? allAppsWithTests
+			? allApps
 			: response.appDisplayNames.map((appDisplayName) =>
 					displayNameMap.get(appDisplayName),
 				)
 
 		// Update this block to use process.argv
 		const appPattern =
-			selectedApps.length === allAppsWithTests.length
+			selectedApps.length === allApps.length
 				? '*'
 				: selectedApps
 						.map((app) => `${app.exerciseNumber}.${app.stepNumber}.${app.type}`)

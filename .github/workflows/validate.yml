@@ -56,21 +56,9 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
 
-      - name: 🎭 Install Playwright Browsers
-        run: npx playwright install --with-deps chromium
-        working-directory: ./epicshop
-
-      - name: 🎭 Run Playwright tests
-        run: npx playwright test
-        working-directory: ./epicshop
-
-      - name: 📤 Upload Playwright Report
-        uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: playwright-report
-          path: epicshop/playwright-report/
-          retention-days: 30
+      - name: 🧪 Run tests
+        id: run_tests
+        run: node ./epicshop/test.js ..s
 
   deploy:
     name: 🚀 Deploy

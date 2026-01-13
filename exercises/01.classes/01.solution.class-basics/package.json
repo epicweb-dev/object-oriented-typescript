@@ -2,6 +2,7 @@
   "name": "exercises_01.classes_01.solution.class-basics",
   "type": "module",
   "scripts": {
-    "start": "node index.ts"
+    "start": "node index.ts",
+    "test": "node --test index.test.ts"
   }
 }

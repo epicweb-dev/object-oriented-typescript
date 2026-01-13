@@ -2,6 +2,7 @@
   "name": "exercises_04.inheritance_01.problem.extends",
   "type": "module",
   "scripts": {
-    "start": "node index.ts"
+    "start": "node index.ts",
+    "test": "node --test index.test.ts"
   }
 }
