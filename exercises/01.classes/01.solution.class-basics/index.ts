@@ -15,7 +15,7 @@ export class Product {
 }
 
 export class ShoppingCart {
-	items: Product[]
+	items: Array<Product>
 
 	constructor() {
 		this.items = []
