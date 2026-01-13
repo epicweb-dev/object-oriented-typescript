@@ -87,7 +87,7 @@ Learn all about the workshop app on the
 [node]: https://nodejs.org
 [git]: https://git-scm.com/
 [build-badge]: https://img.shields.io/github/actions/workflow/status/epicweb-dev/object-oriented-typescript/validate.yml?branch=main&logo=github&style=flat-square
-[build]: https://github.com/epicweb-dev/object-oriented-typescript/actions?query=workflow%3Avalidate
+[build]: https://github.com/epicweb-dev/object-oriented-typescript/actions?query=workflow%3Adeploy
 [license-badge]: https://img.shields.io/badge/license-GPL%203.0%20License-blue.svg?style=flat-square
 [license]: https://github.com/epicweb-dev/object-oriented-typescript/blob/main/LICENSE
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
