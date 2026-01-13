@@ -1,6 +1,6 @@
 // Protected Access Modifier
 
-class Vehicle {
+export class Vehicle {
 	protected make: string
 	protected model: string
 
@@ -10,7 +10,7 @@ class Vehicle {
 	}
 }
 
-class Car extends Vehicle {
+export class Car extends Vehicle {
 	getInfo(): string {
 		// ✅ Can access protected fields from parent class
 		return `${this.make} ${this.model}`

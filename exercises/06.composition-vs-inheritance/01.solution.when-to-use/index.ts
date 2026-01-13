@@ -1,20 +1,20 @@
 // When to Use Composition vs Inheritance
 
 // Inheritance: FileLogger and ConsoleLogger ARE types of Logger
-class Logger {
+export class Logger {
 	log(message: string): void {
 		console.log(`Log: ${message}`)
 	}
 }
 
-class FileLogger extends Logger {
+export class FileLogger extends Logger {
 	// FileLogger IS-A Logger
 	log(message: string): void {
 		console.log(`File Log: ${message}`)
 	}
 }
 
-class ConsoleLogger extends Logger {
+export class ConsoleLogger extends Logger {
 	// ConsoleLogger IS-A Logger
 	log(message: string): void {
 		console.log(`Console Log: ${message}`)
@@ -22,7 +22,7 @@ class ConsoleLogger extends Logger {
 }
 
 // Composition: EmailService HAS-A Logger (but isn't a Logger itself)
-class EmailService {
+export class EmailService {
 	private logger: Logger // EmailService HAS-A Logger
 
 	constructor(logger: Logger) {

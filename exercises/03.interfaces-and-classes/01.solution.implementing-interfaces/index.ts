@@ -1,10 +1,10 @@
 // Implementing Interfaces
 
-interface PaymentMethod {
+export interface PaymentMethod {
 	pay(amount: number): string
 }
 
-class CreditCard implements PaymentMethod {
+export class CreditCard implements PaymentMethod {
 	cardNumber: string
 
 	constructor(cardNumber: string) {
@@ -16,7 +16,7 @@ class CreditCard implements PaymentMethod {
 	}
 }
 
-class PayPal implements PaymentMethod {
+export class PayPal implements PaymentMethod {
 	email: string
 
 	constructor(email: string) {

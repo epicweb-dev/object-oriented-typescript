@@ -1,6 +1,6 @@
 // Constructor Patterns
 
-class User {
+export class User {
 	constructor(
 		public name: string,
 		public email: string,
@@ -8,7 +8,7 @@ class User {
 	) {}
 }
 
-class BankAccount {
+export class BankAccount {
 	constructor(
 		public accountNumber: string,
 		private balance: number = 0,
@@ -23,7 +23,7 @@ class BankAccount {
 	}
 }
 
-class Config {
+export class Config {
 	constructor(
 		public host: string = 'localhost',
 		public port: number = 3000,

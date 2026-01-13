@@ -1,6 +1,6 @@
 // Public and Private Access Modifiers
 
-class User {
+export class User {
 	public username: string
 	private password: string
 

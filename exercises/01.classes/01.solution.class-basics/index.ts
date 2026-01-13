@@ -1,6 +1,6 @@
 // Creating Classes
 
-class Product {
+export class Product {
 	name: string
 	price: number
 
@@ -14,7 +14,7 @@ class Product {
 	}
 }
 
-class ShoppingCart {
+export class ShoppingCart {
 	items: Product[]
 
 	constructor() {

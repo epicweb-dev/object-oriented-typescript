@@ -1,6 +1,6 @@
 // Substitutability - Polymorphism
 
-class MediaFile {
+export class MediaFile {
 	filename: string
 
 	constructor(filename: string) {
@@ -12,19 +12,19 @@ class MediaFile {
 	}
 }
 
-class AudioFile extends MediaFile {
+export class AudioFile extends MediaFile {
 	play(): string {
 		return `Playing audio: ${this.filename}`
 	}
 }
 
-class VideoFile extends MediaFile {
+export class VideoFile extends MediaFile {
 	play(): string {
 		return `Playing video: ${this.filename}`
 	}
 }
 
-class MediaPlayer {
+export class MediaPlayer {
 	playFile(media: MediaFile): string {
 		// ✅ Works with MediaFile or any subclass (polymorphism)
 		return media.play()

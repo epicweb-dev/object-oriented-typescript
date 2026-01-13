@@ -1,10 +1,10 @@
 // Programming to Abstractions
 
-interface PaymentMethod {
+export interface PaymentMethod {
 	pay(amount: number): string
 }
 
-class CreditCard implements PaymentMethod {
+export class CreditCard implements PaymentMethod {
 	cardNumber: string
 
 	constructor(cardNumber: string) {
@@ -16,7 +16,7 @@ class CreditCard implements PaymentMethod {
 	}
 }
 
-class PayPal implements PaymentMethod {
+export class PayPal implements PaymentMethod {
 	email: string
 
 	constructor(email: string) {
@@ -29,7 +29,7 @@ class PayPal implements PaymentMethod {
 }
 
 // ✅ Function accepts interface type, not concrete class
-function processPayment(method: PaymentMethod, amount: number): string {
+export function processPayment(method: PaymentMethod, amount: number): string {
 	return method.pay(amount)
 }
 

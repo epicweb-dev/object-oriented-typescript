@@ -1,6 +1,6 @@
 // Method Overriding
 
-class Shape {
+export class Shape {
 	color: string
 
 	constructor(color: string) {
@@ -12,7 +12,7 @@ class Shape {
 	}
 }
 
-class Circle extends Shape {
+export class Circle extends Shape {
 	radius: number
 
 	constructor(color: string, radius: number) {
@@ -26,7 +26,7 @@ class Circle extends Shape {
 	}
 }
 
-class Rectangle extends Shape {
+export class Rectangle extends Shape {
 	width: number
 	height: number
 
