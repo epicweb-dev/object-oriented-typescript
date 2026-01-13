@@ -6,7 +6,7 @@
 // - Method: getDescription() returns "Product: {name} - ${price}"
 
 // 🐨 Create a ShoppingCart class with:
-// - Field: items (Product[])
+// - Field: items (Array<Product>)
 // - Constructor to initialize empty items array
 // - Method: addItem(product: Product) adds to items
 // - Method: getTotal() returns sum of all product prices
