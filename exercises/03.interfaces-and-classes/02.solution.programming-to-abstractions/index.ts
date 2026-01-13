@@ -29,7 +29,7 @@ export class PayPal implements PaymentMethod {
 }
 
 // ✅ Function accepts interface type, not concrete class
-export function processPayment(method: PaymentMethod, amount: number): string {
+export function processPayment(method: PaymentMethod, amount: number) {
 	return method.pay(amount)
 }
 
