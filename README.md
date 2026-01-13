@@ -32,9 +32,11 @@
 
 ## Prerequisites
 
-- [Programming Foundations](https://github.com/epicweb-dev/programming-foundations) workshop
+- [Programming Foundations](https://github.com/epicweb-dev/programming-foundations)
+  workshop
 - [Structured Data](https://github.com/epicweb-dev/structured-data) workshop
-- [Type Safety](https://github.com/epicweb-dev/type-safety) workshop (or equivalent knowledge)
+- [Type Safety](https://github.com/epicweb-dev/type-safety) workshop (or
+  equivalent knowledge)
 - Understanding of interfaces and type annotations
 
 ## Pre-workshop Resources

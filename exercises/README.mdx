@@ -40,7 +40,8 @@ class ShoppingCart {
 ```ts
 type Cart = readonly Product[]
 const addItem = (cart: Cart, product: Product): Cart => [...cart, product]
-const getTotal = (cart: Cart): number => cart.reduce((sum, p) => sum + p.price, 0)
+const getTotal = (cart: Cart): number =>
+	cart.reduce((sum, p) => sum + p.price, 0)
 ```
 
 **Both are valid.** OOP excels at encapsulation and polymorphism. FP excels at
