@@ -1,0 +1,11 @@
+# Substitutability
+
+👨‍💼 Perfect! You've demonstrated polymorphism in action.
+
+🦉 Notice how `MediaPlayer.playFile()` accepts `MediaFile` as the parameter
+type, but it works with both `AudioFile` and `VideoFile`. This is
+substitutability—any subclass can be used wherever the parent class is expected.
+
+💰 This is powerful because you can add new media types (like `ImageFile`) without
+changing the `MediaPlayer` code. The player doesn't need to know about specific
+types—it just works with the base `MediaFile` type.

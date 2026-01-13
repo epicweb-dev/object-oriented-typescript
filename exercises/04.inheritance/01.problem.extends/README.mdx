@@ -1,0 +1,30 @@
+# Extends
+
+👨‍💼 Let's build a shape hierarchy. We'll create a base `Shape` class and extend
+it with specific shapes like `Circle` and `Rectangle`.
+
+🐨 Open <InlineFile file="index.ts" /> and:
+
+1. Create a `Shape` base class with a `color` field
+2. Create a `Circle` class that extends `Shape`
+3. Add a `radius` field to `Circle`
+4. Create a `Rectangle` class that extends `Shape`
+5. Add `width` and `height` fields to `Rectangle`
+
+💰 Inheritance syntax:
+
+```ts
+class Base {
+	field: Type
+}
+
+class Derived extends Base {
+	// Inherits field from Base
+	// Can add more fields and methods
+}
+```
+
+💰 Don't forget to call `super()` in the constructor if the parent has a
+constructor.
+
+📜 [TypeScript Handbook - Inheritance](https://www.typescriptlang.org/docs/handbook/2/classes.html#inheritance)

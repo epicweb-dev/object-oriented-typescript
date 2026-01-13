@@ -1,0 +1,15 @@
+# When to Use Composition vs Inheritance
+
+👨‍💼 Perfect! You've demonstrated both patterns correctly.
+
+🦉 Notice the difference:
+
+- **Inheritance** (`FileLogger`, `ConsoleLogger`): These ARE types of loggers.
+  They specialize the logging behavior.
+
+- **Composition** (`EmailService`): This HAS a logger but isn't a logger
+  itself. It uses logging as a tool. You could swap in different loggers
+  without changing EmailService.
+
+💰 `EmailService` could use `FileLogger`, `ConsoleLogger`, or any other
+`Logger` implementation. This flexibility is the power of composition.

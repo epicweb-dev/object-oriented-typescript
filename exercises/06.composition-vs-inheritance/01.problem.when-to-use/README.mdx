@@ -1,0 +1,26 @@
+# When to Use Composition vs Inheritance
+
+👨‍💼 Let's build a notification system. We need to decide whether to use
+inheritance or composition for different scenarios.
+
+🐨 Open <InlineFile file="index.ts" /> and:
+
+1. Create a `Logger` class with a `log(message: string)` method
+2. Create an `EmailService` class that uses composition (has-a Logger)
+3. Create a `FileLogger` class that uses inheritance (is-a Logger)
+4. Create a `ConsoleLogger` class that uses inheritance (is-a Logger)
+5. Demonstrate when each approach is appropriate
+
+💰 Inheritance (is-a):
+- `FileLogger` IS-A `Logger`
+- `ConsoleLogger` IS-A `Logger`
+- They are specializations of Logger
+
+💰 Composition (has-a):
+- `EmailService` HAS-A `Logger`
+- EmailService uses logging but isn't a type of logger
+- Can swap different loggers at runtime
+
+💰 Think about the relationship: Is it "is-a" or "has-a"?
+
+📜 [Composition over Inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance)

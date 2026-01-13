@@ -1,0 +1,50 @@
+# Classes
+
+Classes combine data (fields) and behavior (methods) into a single unit. They're
+templates for creating objects.
+
+```ts
+class User {
+	name: string
+	email: string
+
+	constructor(name: string, email: string) {
+		this.name = name
+		this.email = email
+	}
+
+	greet(): string {
+		return `Hello, I'm ${this.name}`
+	}
+}
+
+const user = new User('Alice', 'alice@example.com')
+console.log(user.greet()) // "Hello, I'm Alice"
+```
+
+## Why Classes?
+
+- **Encapsulation** - Bundle related data and behavior
+- **Reusability** - Create multiple instances from one template
+- **Type safety** - TypeScript checks field and method types
+
+## TypeScript Shorthand
+
+TypeScript offers a shorthand for constructor parameters:
+
+```ts
+class User {
+	constructor(
+		public name: string,
+		public email: string,
+	) {}
+}
+// Automatically creates and assigns this.name and this.email
+```
+
+<callout-info>
+Classes in TypeScript are similar to classes in Java or C#. If you know those
+languages, you'll feel right at home.
+</callout-info>
+
+In this exercise, you'll create and use classes.

@@ -1,0 +1,71 @@
+# Polymorphism
+
+Polymorphism means "many forms." In object-oriented programming, it allows you to
+treat objects of different types uniformly through a common interface or base
+class.
+
+```ts
+class Animal {
+	makeSound(): string {
+		return 'Some sound'
+	}
+}
+
+class Dog extends Animal {
+	makeSound(): string {
+		return 'Woof!'
+	}
+}
+
+class Cat extends Animal {
+	makeSound(): string {
+		return 'Meow!'
+	}
+}
+
+function makeAnimalSound(animal: Animal) {
+	return animal.makeSound() // Works with any Animal subclass
+}
+
+makeAnimalSound(new Dog()) // "Woof!"
+makeAnimalSound(new Cat()) // "Meow!"
+```
+
+## Substitutability
+
+Polymorphism relies on the Liskov Substitution Principle: instances of a
+subclass can be used wherever instances of the parent class are expected.
+
+```ts
+class Shape {
+	getArea(): number {
+		return 0
+	}
+}
+
+class Circle extends Shape {
+	getArea(): number {
+		return Math.PI * this.radius ** 2
+	}
+}
+
+function printArea(shape: Shape) {
+	console.log(shape.getArea()) // Works with Shape or any subclass
+}
+
+printArea(new Circle(5)) // ✅ Circle is substitutable for Shape
+```
+
+## Benefits
+
+- **Flexibility** - Write code that works with multiple types
+- **Extensibility** - Add new types without changing existing code
+- **Maintainability** - Change implementation without affecting callers
+
+<callout-info>
+Polymorphism enables you to write code that works with the base type, and
+automatically works with all subtypes. This is powerful for building flexible
+systems.
+</callout-info>
+
+In this exercise, you'll use polymorphism to write flexible code.

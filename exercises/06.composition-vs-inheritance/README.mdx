@@ -1,0 +1,66 @@
+# Composition vs Inheritance
+
+Both composition and inheritance are ways to reuse code, but they solve different
+problems. Knowing when to use each is crucial for good design.
+
+## Inheritance (Is-A)
+
+Inheritance creates an "is-a" relationship:
+
+```ts
+class Animal {
+	makeSound(): void {}
+}
+
+class Dog extends Animal {
+	// Dog IS-A Animal
+}
+```
+
+Use inheritance when:
+- You have a clear hierarchical relationship
+- Subclasses are specializations of the parent
+- You want to share implementation
+
+## Composition (Has-A)
+
+Composition creates a "has-a" relationship:
+
+```ts
+class Engine {
+	start(): void {}
+}
+
+class Car {
+	private engine: Engine // Car HAS-A Engine
+
+	start(): void {
+		this.engine.start()
+	}
+}
+```
+
+Use composition when:
+- You want flexibility to change behavior at runtime
+- You need to combine multiple behaviors
+- The relationship is "has-a" not "is-a"
+
+## When to Use Each
+
+**Inheritance:**
+- `Dog` is an `Animal` ✅
+- `Circle` is a `Shape` ✅
+- `Manager` is an `Employee` ✅
+
+**Composition:**
+- `Car` has an `Engine` ✅
+- `Computer` has a `CPU` ✅
+- `User` has a `Profile` ✅
+
+<callout-info>
+Favor composition over inheritance when possible. Composition is more flexible
+and easier to change. Use inheritance when you truly have an "is-a"
+relationship.
+</callout-info>
+
+In this exercise, you'll choose between composition and inheritance.

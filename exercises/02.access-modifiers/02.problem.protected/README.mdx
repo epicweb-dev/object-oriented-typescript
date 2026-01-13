@@ -1,0 +1,31 @@
+# Protected Access Modifier
+
+👨‍💼 Now let's build a class hierarchy for a vehicle system. We need fields that
+subclasses can access but external code cannot.
+
+🐨 Open <InlineFile file="index.ts" /> and:
+
+1. Create a `Vehicle` base class with protected `make` and `model` fields
+2. Create a `Car` class that extends `Vehicle`
+3. Add a method in `Car` that uses the protected fields
+4. Ensure external code cannot access `make` and `model` directly
+
+💰 Protected members are accessible in:
+- The class itself
+- Subclasses (via `extends`)
+
+💰 Protected syntax:
+
+```ts
+class Base {
+	protected field: string
+}
+
+class Derived extends Base {
+	method() {
+		return this.field // ✅ Can access protected member
+	}
+}
+```
+
+📜 [TypeScript Handbook - Protected](https://www.typescriptlang.org/docs/handbook/2/classes.html#protected)

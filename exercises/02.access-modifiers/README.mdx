@@ -1,0 +1,65 @@
+# Access Modifiers
+
+Access modifiers control the visibility of class members (fields and methods). They
+determine what code can access which parts of a class.
+
+```ts
+class BankAccount {
+	public balance: number // Accessible everywhere
+	private accountNumber: string // Only accessible within this class
+	protected owner: string // Accessible in this class and subclasses
+}
+```
+
+## Public (Default)
+
+Public members are accessible from anywhere:
+
+```ts
+class User {
+	public name: string // 'public' is optional (default)
+}
+
+const user = new User()
+user.name = 'Alice' // ✅ Can access
+```
+
+## Private
+
+Private members are only accessible within the class:
+
+```ts
+class BankAccount {
+	private accountNumber: string
+
+	constructor(accountNumber: string) {
+		this.accountNumber = accountNumber // ✅ Can access inside class
+	}
+}
+
+const account = new BankAccount('12345')
+account.accountNumber // ❌ Error: Property is private
+```
+
+## Protected
+
+Protected members are accessible in the class and its subclasses:
+
+```ts
+class Animal {
+	protected name: string
+}
+
+class Dog extends Animal {
+	bark(): string {
+		return `${this.name} barks!` // ✅ Can access protected member
+	}
+}
+```
+
+<callout-info>
+Access modifiers help enforce encapsulation—hiding internal implementation
+details while exposing a clean public interface.
+</callout-info>
+
+In this exercise, you'll use access modifiers to control visibility.

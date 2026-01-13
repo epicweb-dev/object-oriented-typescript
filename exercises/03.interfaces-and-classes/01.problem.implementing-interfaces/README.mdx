@@ -1,0 +1,29 @@
+# Implementing Interfaces
+
+👨‍💼 Let's build a payment system with different payment methods. We'll use
+interfaces to ensure all payment methods follow the same contract.
+
+🐨 Open <InlineFile file="index.ts" /> and:
+
+1. Create a `PaymentMethod` interface with a `pay(amount: number)` method
+2. Create a `CreditCard` class that implements `PaymentMethod`
+3. Create a `PayPal` class that implements `PaymentMethod`
+4. Each class should have its own implementation of `pay()`
+
+💰 Interface syntax:
+
+```ts
+interface InterfaceName {
+	method(): ReturnType
+}
+
+class ClassName implements InterfaceName {
+	method(): ReturnType {
+		// Implementation
+	}
+}
+```
+
+💰 The class must implement all methods defined in the interface.
+
+📜 [TypeScript Handbook - Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html#interfaces-vs-intersections)

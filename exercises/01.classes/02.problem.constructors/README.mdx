@@ -1,0 +1,33 @@
+# Constructors
+
+👨‍💼 TypeScript has a shorthand for constructor parameters that automatically
+creates and assigns fields.
+
+```ts
+// Long form
+class User {
+	name: string
+	constructor(name: string) {
+		this.name = name
+	}
+}
+
+// Shorthand with parameter properties
+class User {
+	constructor(public name: string) {}
+}
+```
+
+🐨 Open <InlineFile file="index.ts" /> and:
+
+1. Refactor classes to use parameter properties
+2. Use default parameter values
+3. Make some parameters optional
+
+💰 Parameter property syntax:
+
+```ts
+constructor(public name: string, private age: number = 0) {}
+```
+
+📜 [TypeScript Handbook - Parameter Properties](https://www.typescriptlang.org/docs/handbook/2/classes.html#parameter-properties)

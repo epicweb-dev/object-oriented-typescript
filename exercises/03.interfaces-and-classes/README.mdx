@@ -1,0 +1,75 @@
+# Interfaces and Classes
+
+Interfaces define contracts that classes can implement. They specify what methods
+and properties a class must have, without providing the implementation.
+
+```ts
+interface Flyable {
+	fly(): void
+}
+
+class Bird implements Flyable {
+	fly(): void {
+		console.log('Flying!')
+	}
+}
+```
+
+## Implementing Interfaces
+
+When a class implements an interface, it must provide all required members:
+
+```ts
+interface Drawable {
+	draw(): void
+}
+
+class Circle implements Drawable {
+	draw(): void {
+		console.log('Drawing a circle')
+	}
+}
+```
+
+## Multiple Interfaces
+
+A class can implement multiple interfaces:
+
+```ts
+interface Swimmable {
+	swim(): void
+}
+
+interface Flyable {
+	fly(): void
+}
+
+class Duck implements Swimmable, Flyable {
+	swim(): void {
+		console.log('Swimming')
+	}
+	fly(): void {
+		console.log('Flying')
+	}
+}
+```
+
+## Programming to Abstractions
+
+Use interfaces as types to write flexible code:
+
+```ts
+function processAnimal(animal: Flyable) {
+	animal.fly() // Works with any class that implements Flyable
+}
+
+processAnimal(new Bird())
+processAnimal(new Duck())
+```
+
+<callout-info>
+Interfaces enable polymorphism—you can treat different classes the same way
+if they implement the same interface.
+</callout-info>
+
+In this exercise, you'll implement interfaces and program to abstractions.

@@ -1,0 +1,25 @@
+# Programming to Abstractions
+
+👨‍💼 Now let's write code that works with any class implementing an interface.
+This is called "programming to abstractions"—using interfaces instead of
+concrete classes.
+
+🐨 Open <InlineFile file="index.ts" /> and:
+
+1. Use the `PaymentMethod` interface from the previous exercise
+2. Create a `PaymentProcessor` class with a method that accepts `PaymentMethod`
+3. Write a function that processes payments using the interface type
+4. Test with different payment method implementations
+
+💰 Use interfaces as parameter types:
+
+```ts
+function processPayment(method: PaymentMethod, amount: number) {
+	return method.pay(amount) // Works with any PaymentMethod implementation
+}
+```
+
+💰 This makes your code flexible—you can add new payment methods without
+changing the processor code.
+
+📜 [TypeScript Handbook - Using Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html#using-interfaces)
