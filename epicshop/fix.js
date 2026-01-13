@@ -49,7 +49,6 @@ function relativeToWorkshopRoot(dir) {
 }
 
 await updatePkgNames()
-await updateTsconfig()
 
 async function updatePkgNames() {
 	for (const file of appsWithPkgJson) {
@@ -63,30 +62,6 @@ async function updatePkgNames() {
 		if (written) {
 			console.log(`updated ${path.relative(process.cwd(), pkgjsonPath)}`)
 		}
-	}
-}
-
-async function updateTsconfig() {
-	const tsconfig = {
-		files: [],
-		exclude: ['node_modules'],
-		references: appsWithPkgJson.map((a) => ({
-			path: relativeToWorkshopRoot(a).replace(/\\/g, '/'),
-		})),
-	}
-	const written = await writeIfNeeded(
-		path.join(workshopRoot, 'tsconfig.json'),
-		`${JSON.stringify(tsconfig, null, 2)}\n`,
-		{ parser: 'json' },
-	)
-
-	if (written) {
-		// delete node_modules/.cache
-		const cacheDir = path.join(workshopRoot, 'node_modules', '.cache')
-		if (exists(cacheDir)) {
-			await fs.promises.rm(cacheDir, { recursive: true })
-		}
-		console.log('all fixed up')
 	}
 }
 
