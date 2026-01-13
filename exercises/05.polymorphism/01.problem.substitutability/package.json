@@ -1,0 +1,7 @@
+{
+  "name": "exercises_05.polymorphism_01.problem.substitutability",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts"
+  }
+}

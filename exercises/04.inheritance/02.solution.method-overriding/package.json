@@ -1,0 +1,7 @@
+{
+  "name": "exercises_04.inheritance_02.solution.method-overriding",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts"
+  }
+}

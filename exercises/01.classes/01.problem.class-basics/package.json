@@ -1,0 +1,7 @@
+{
+  "name": "exercises_01.classes_01.problem.class-basics",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts"
+  }
+}

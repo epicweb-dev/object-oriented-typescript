@@ -1,0 +1,7 @@
+{
+  "name": "exercises_04.inheritance_01.solution.extends",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts"
+  }
+}

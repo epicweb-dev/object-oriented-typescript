@@ -1,0 +1,7 @@
+{
+  "name": "exercises_03.interfaces-and-classes_01.problem.implementing-interfaces",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts"
+  }
+}

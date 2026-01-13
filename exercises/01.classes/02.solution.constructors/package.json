@@ -1,0 +1,7 @@
+{
+  "name": "exercises_01.classes_02.solution.constructors",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts"
+  }
+}

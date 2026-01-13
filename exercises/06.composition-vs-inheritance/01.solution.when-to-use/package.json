@@ -1,0 +1,7 @@
+{
+  "name": "exercises_06.composition-vs-inheritance_01.solution.when-to-use",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts"
+  }
+}

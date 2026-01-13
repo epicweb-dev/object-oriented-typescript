@@ -1,0 +1,7 @@
+{
+  "name": "exercises_02.access-modifiers_02.solution.protected",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts"
+  }
+}

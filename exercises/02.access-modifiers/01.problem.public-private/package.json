@@ -1,0 +1,7 @@
+{
+  "name": "exercises_02.access-modifiers_01.problem.public-private",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts"
+  }
+}
