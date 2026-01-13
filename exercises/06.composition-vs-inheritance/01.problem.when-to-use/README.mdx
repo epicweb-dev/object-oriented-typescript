@@ -12,11 +12,13 @@ inheritance or composition for different scenarios.
 5. Demonstrate when each approach is appropriate
 
 💰 Inheritance (is-a):
+
 - `FileLogger` IS-A `Logger`
 - `ConsoleLogger` IS-A `Logger`
 - They are specializations of Logger
 
 💰 Composition (has-a):
+
 - `EmailService` HAS-A `Logger`
 - EmailService uses logging but isn't a type of logger
 - Can swap different loggers at runtime

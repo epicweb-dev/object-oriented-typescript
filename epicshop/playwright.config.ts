@@ -1,7 +1,9 @@
 import { defineConfig } from '@playwright/test'
 import getPort from 'get-port'
 
-const port = process.env.PORT ? Number(process.env.PORT) : await getPort({ port: 5639 })
+const port = process.env.PORT
+	? Number(process.env.PORT)
+	: await getPort({ port: 5639 })
 
 process.env.PORT = String(port)
 
