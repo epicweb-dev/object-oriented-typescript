@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
+// @ts-ignore - these won't appear in the problem file
 import { Product, ShoppingCart } from './index.ts'
 
 await test('Product class should create instances with name and price', () => {
