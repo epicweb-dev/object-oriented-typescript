@@ -20,5 +20,3 @@
 // const rectangle = new Rectangle('blue', 10, 20)
 // console.log(circle.getArea()) // Should print ~78.54
 // console.log(rectangle.getArea()) // Should print 200
-
-export {}

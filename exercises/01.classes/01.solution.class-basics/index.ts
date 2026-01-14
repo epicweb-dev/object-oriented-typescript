@@ -40,5 +40,3 @@ const cart = new ShoppingCart()
 cart.addItem(laptop)
 cart.addItem(mouse)
 console.log(`Cart total: $${cart.getTotal()}`)
-
-export {}

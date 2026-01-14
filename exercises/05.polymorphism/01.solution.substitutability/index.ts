@@ -38,5 +38,3 @@ const player = new MediaPlayer()
 // ✅ Both work because AudioFile and VideoFile are substitutable for MediaFile
 console.log(player.playFile(audio)) // "Playing audio: song.mp3"
 console.log(player.playFile(video)) // "Playing video: movie.mp4"
-
-export {}

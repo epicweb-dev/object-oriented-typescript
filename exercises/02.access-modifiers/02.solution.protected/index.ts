@@ -21,5 +21,3 @@ const car = new Car('Toyota', 'Camry')
 console.log(car.getInfo()) // ✅ Works - getInfo() is public
 // console.log(car.make) // ❌ Error - make is protected
 // console.log(car.model) // ❌ Error - model is protected
-
-export {}

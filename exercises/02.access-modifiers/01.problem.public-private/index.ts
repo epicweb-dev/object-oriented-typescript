@@ -13,5 +13,3 @@
 // console.log(user.password) // ❌ Should error - password is private
 // console.log(user.login('secret123')) // ✅ Should return true
 // console.log(user.login('wrong')) // ✅ Should return false
-
-export {}

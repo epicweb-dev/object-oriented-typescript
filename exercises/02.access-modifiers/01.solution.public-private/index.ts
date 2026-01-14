@@ -19,5 +19,3 @@ console.log(user.username) // ✅ Works - username is public
 // console.log(user.password) // ❌ Error - password is private
 console.log(user.login('secret123')) // ✅ Returns true
 console.log(user.login('wrong')) // ✅ Returns false
-
-export {}

@@ -21,5 +21,3 @@
 // const player = new MediaPlayer()
 // console.log(player.playFile(audio)) // Should work - AudioFile is substitutable for MediaFile
 // console.log(player.playFile(video)) // Should work - VideoFile is substitutable for MediaFile
-
-export {}

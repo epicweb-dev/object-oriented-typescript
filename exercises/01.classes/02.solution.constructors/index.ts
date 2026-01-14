@@ -44,5 +44,3 @@ const config = new Config()
 const customConfig = new Config('example.com', 8080, true)
 console.log(`Default config: ${config.host}:${config.port}`)
 console.log(`Custom config: ${customConfig.host}:${customConfig.port}`)
-
-export {}

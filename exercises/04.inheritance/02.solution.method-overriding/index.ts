@@ -47,5 +47,3 @@ const rectangle = new Rectangle('blue', 10, 20)
 
 console.log(circle.getArea()) // ~78.54
 console.log(rectangle.getArea()) // 200
-
-export {}

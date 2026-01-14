@@ -26,5 +26,3 @@
 // fileLogger.log('File system initialized')
 // consoleLogger.log('Console ready')
 // emailService.sendEmail('user@example.com', 'Welcome')
-
-export {}

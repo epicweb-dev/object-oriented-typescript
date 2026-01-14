@@ -18,5 +18,3 @@
 // const paypal = new PayPal('user@example.com')
 // console.log(creditCard.pay(100))
 // console.log(paypal.pay(50))
-
-export {}

@@ -23,5 +23,3 @@
 // account.deposit(100)
 // const config = new Config()
 // const customConfig = new Config('example.com', 8080, true)
-
-export {}

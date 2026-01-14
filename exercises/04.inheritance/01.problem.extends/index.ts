@@ -21,5 +21,3 @@
 // console.log(circle.radius) // ✅ Should work - defined in Circle
 // console.log(rectangle.color) // ✅ Should work - inherited from Shape
 // console.log(rectangle.width, rectangle.height) // ✅ Should work
-
-export {}

@@ -47,5 +47,3 @@ const emailService2 = new EmailService(consoleLogger)
 
 emailService1.sendEmail('user@example.com', 'Welcome')
 emailService2.sendEmail('admin@example.com', 'Alert')
-
-export {}

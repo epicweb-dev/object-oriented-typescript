@@ -14,5 +14,3 @@
 // console.log(car.getInfo()) // ✅ Should print "Toyota Camry"
 // console.log(car.make) // ❌ Should error - make is protected
 // console.log(car.model) // ❌ Should error - model is protected
-
-export {}

@@ -35,5 +35,3 @@ console.log(circle.color) // ✅ Inherited from Shape
 console.log(circle.radius) // ✅ Defined in Circle
 console.log(rectangle.color) // ✅ Inherited from Shape
 console.log(rectangle.width, rectangle.height) // ✅ Defined in Rectangle
-
-export {}

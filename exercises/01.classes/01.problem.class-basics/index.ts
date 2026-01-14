@@ -18,5 +18,3 @@
 // cart.addItem(laptop)
 // cart.addItem(mouse)
 // console.log(cart.getTotal())
-
-export {}

@@ -37,9 +37,4 @@ for (const testFile of testFiles) {
 	const dest = path.join(destDir, testFile)
 
 	fs.copyFileSync(src, dest)
-	console.log(`✅ Copied ${testFile} from solution to playground`)
-}
-
-if (testFiles.length > 0) {
-	console.log(`\n📋 Copied ${testFiles.length} test file(s) to playground`)
 }
