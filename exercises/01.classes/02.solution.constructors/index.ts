@@ -48,7 +48,7 @@ class Config {
 const user = new User('Alice', 'alice@example.com')
 const admin = new User('Bob', 'bob@example.com', 'admin')
 console.log(`${user.name} is a ${user.role}`)
-console.log(`${admin.name} is a ${admin.role}`)
+console.log(`${admin.name} is an ${admin.role}`)
 
 const account = new BankAccount('12345')
 account.deposit(100)

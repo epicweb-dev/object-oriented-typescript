@@ -1,7 +1,8 @@
 # Constructors
 
 👨‍💼 TypeScript has a shorthand for constructor parameters that automatically
-creates and assigns fields.
+creates and assigns fields, but this workshop runtime does **not** support that
+syntax. We'll use the long form here.
 
 ```ts
 // Long form
@@ -12,7 +13,7 @@ class User {
 	}
 }
 
-// Shorthand with parameter properties
+// Shorthand with parameter properties (not supported in this runtime)
 class User {
 	constructor(public name: string) {}
 }
@@ -37,11 +38,11 @@ account.#balance // ❌ Error! Private field not accessible
 
 🐨 Open <InlineFile file="index.ts" /> and:
 
-1. Create classes using parameter property shorthand
+1. Create classes with explicit fields and constructor assignments
 2. Use default parameter values
 3. Use `#` prefix for fields that should be private
 
-💰 Parameter property shorthand:
+💰 Parameter property shorthand (reference only):
 
 ```ts
 constructor(public name: string, public email: string) {}
