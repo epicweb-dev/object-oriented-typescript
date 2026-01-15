@@ -26,7 +26,7 @@
 // const base = new MediaFile('file.mp3')
 // const basePlayer = new MediaPlayer()
 // console.log(
-// 	'Results JSON:',
+// 	'Results:',
 // 	JSON.stringify({
 // 		base: basePlayer.playFile(base),
 // 		audio: basePlayer.playFile(audio),

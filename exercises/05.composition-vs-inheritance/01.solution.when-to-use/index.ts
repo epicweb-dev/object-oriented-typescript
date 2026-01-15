@@ -49,7 +49,7 @@ emailService1.sendEmail('user@example.com', 'Welcome')
 emailService2.sendEmail('admin@example.com', 'Alert')
 
 console.log(
-	'Results JSON:',
+	'Results:',
 	JSON.stringify({
 		fileLoggerIsLogger: fileLogger instanceof Logger,
 		consoleLoggerIsLogger: consoleLogger instanceof Logger,

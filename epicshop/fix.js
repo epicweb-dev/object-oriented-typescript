@@ -1,7 +1,6 @@
 // This should run by node without any dependencies
 // because you may need to run it without deps.
 
-import cp from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -9,6 +8,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const here = (...p) => path.join(__dirname, ...p)
 const VERBOSE = false
+// eslint-disable-next-line
 const logVerbose = (...args) => (VERBOSE ? console.log(...args) : undefined)
 
 const workshopRoot = here('..')
@@ -78,7 +78,7 @@ function exists(p) {
 	try {
 		fs.statSync(p)
 		return true
-	} catch (error) {
+	} catch {
 		return false
 	}
 }

@@ -50,7 +50,7 @@ const afterFirstAddCount = sampleCart.items.length
 sampleCart.addItem(sampleMouse)
 
 console.log(
-	'Results JSON:',
+	'Results:',
 	JSON.stringify({
 		product: {
 			name: sampleLaptop.name,

@@ -31,7 +31,7 @@
 // sampleAccount.deposit(100)
 // sampleAccount.deposit(50)
 // console.log(
-// 	'Results JSON:',
+// 	'Results:',
 // 	JSON.stringify({
 // 		user: { name: user.name, email: user.email, role: user.role },
 // 		admin: { name: admin.name, email: admin.email, role: admin.role },

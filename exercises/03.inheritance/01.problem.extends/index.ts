@@ -26,7 +26,7 @@
 // const sampleCircle = new Circle('red', 5)
 // const sampleRectangle = new Rectangle('blue', 10, 20)
 // console.log(
-// 	'Results JSON:',
+// 	'Results:',
 // 	JSON.stringify({
 // 		circle: { color: sampleCircle.color, radius: sampleCircle.radius },
 // 		rectangle: {

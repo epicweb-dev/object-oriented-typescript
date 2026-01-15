@@ -43,7 +43,7 @@ const testCard = new CreditCard('1111-2222-3333-4444')
 const testPayPal = new PayPal('test@example.com')
 
 console.log(
-	'Results JSON:',
+	'Results:',
 	JSON.stringify({
 		creditCard: processPayment(creditCard, 100),
 		paypal: processPayment(paypal, 50),

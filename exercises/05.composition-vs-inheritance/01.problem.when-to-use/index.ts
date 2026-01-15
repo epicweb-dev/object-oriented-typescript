@@ -29,7 +29,7 @@
 
 // 🐨 When you're done, uncomment this:
 // console.log(
-// 	'Results JSON:',
+// 	'Results:',
 // 	JSON.stringify({
 // 		fileLoggerIsLogger: fileLogger instanceof Logger,
 // 		consoleLoggerIsLogger: consoleLogger instanceof Logger,

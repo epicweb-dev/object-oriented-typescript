@@ -26,10 +26,10 @@ const debouncedRun = debounce(run, 200)
 
 // Add event listeners.
 watcher
-	.on('addDir', (path) => {
+	.on('addDir', (_path) => {
 		debouncedRun()
 	})
-	.on('unlinkDir', (path) => {
+	.on('unlinkDir', (_path) => {
 		debouncedRun()
 	})
 	.on('error', (error) => console.log(`Watcher error: ${error}`))

@@ -35,7 +35,7 @@ console.log(creditCard.pay(100))
 console.log(paypal.pay(50))
 
 console.log(
-	'Results JSON:',
+	'Results:',
 	JSON.stringify({
 		creditCard: {
 			cardNumber: creditCard.cardNumber,

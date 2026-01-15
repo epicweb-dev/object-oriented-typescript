@@ -28,7 +28,7 @@
 // const circleArea = sampleCircle.getArea()
 // const rectangleArea = sampleRectangle.getArea()
 // console.log(
-// 	'Results JSON:',
+// 	'Results:',
 // 	JSON.stringify({
 // 		shapeArea: baseShape.getArea(),
 // 		circleArea,
