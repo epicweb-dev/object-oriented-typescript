@@ -9,17 +9,16 @@ export class User {
 }
 
 export class BankAccount {
-	constructor(
-		public accountNumber: string,
-		private balance: number = 0,
-	) {}
+	#balance: number = 0
+
+	constructor(public accountNumber: string) {}
 
 	deposit(amount: number): void {
-		this.balance += amount
+		this.#balance += amount
 	}
 
 	getBalance(): number {
-		return this.balance
+		return this.#balance
 	}
 }
 
@@ -39,6 +38,7 @@ console.log(`${admin.name} is a ${admin.role}`)
 const account = new BankAccount('12345')
 account.deposit(100)
 console.log(`Balance: $${account.getBalance()}`)
+// account.#balance would be an error - truly private!
 
 const config = new Config()
 const customConfig = new Config('example.com', 8080, true)

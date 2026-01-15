@@ -13,10 +13,10 @@
 // - Override log() to print "Console Log: {message}"
 
 // 🐨 Create an EmailService class using COMPOSITION (has-a):
-// - Field: logger (Logger) - private
+// - Field: #logger (Logger) - private field
 // - Constructor that takes a Logger
 // - Method: sendEmail(to: string, subject: string) returns void
-//   - Uses this.logger.log() to log the email action
+//   - Uses this.#logger.log() to log the email action
 //   - Prints "Sending email to {to}: {subject}"
 
 // Test your code

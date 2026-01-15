@@ -8,12 +8,11 @@ combine data and behavior. TypeScript makes OOP powerful with its type system.
 
 We'll cover:
 
-1. **Classes** - Fields, methods, and constructors
-2. **Access Modifiers** - public, private, and protected
-3. **Interfaces and Classes** - Implementing contracts
-4. **Inheritance** - Extending classes and overriding methods
-5. **Polymorphism** - Substitutability and why it matters
-6. **Composition vs Inheritance** - Practical decision-making
+1. **Classes** - Fields, methods, constructors, and private fields
+2. **Interfaces and Classes** - Implementing contracts
+3. **Inheritance** - Extending classes and overriding methods
+4. **Polymorphism** - Substitutability and why it matters
+5. **Composition vs Inheritance** - Practical decision-making
 
 ## OOP vs Functional Programming
 
@@ -25,12 +24,12 @@ should know the alternative:
 
 ```ts
 class ShoppingCart {
-	private items: Product[] = []
+	#items: Product[] = []
 	addItem(product: Product) {
-		this.items.push(product)
+		this.#items.push(product)
 	}
 	getTotal() {
-		return this.items.reduce((sum, p) => sum + p.price, 0)
+		return this.#items.reduce((sum, p) => sum + p.price, 0)
 	}
 }
 ```
@@ -56,7 +55,7 @@ data transformation and immutability. Choose based on your problem domain.
 
 By the end of this workshop, you'll be able to:
 
-- Create classes with proper encapsulation
+- Create classes with proper encapsulation using `#private` fields
 - Use interfaces to define contracts
 - Apply inheritance appropriately
 - Understand when to prefer composition

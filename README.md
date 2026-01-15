@@ -4,7 +4,7 @@
     Build robust applications with classes, inheritance, and design patterns
   </strong>
   <p>
-    Learn classes, access modifiers, inheritance, polymorphism, and when to choose composition over inheritance.
+    Learn classes, inheritance, polymorphism, and when to choose composition over inheritance.
   </p>
 </div>
 

@@ -23,14 +23,14 @@ export class ConsoleLogger extends Logger {
 
 // Composition: EmailService HAS-A Logger (but isn't a Logger itself)
 export class EmailService {
-	private logger: Logger // EmailService HAS-A Logger
+	#logger: Logger // EmailService HAS-A Logger
 
 	constructor(logger: Logger) {
-		this.logger = logger
+		this.#logger = logger
 	}
 
 	sendEmail(to: string, subject: string): void {
-		this.logger.log(`Sending email to ${to}: ${subject}`)
+		this.#logger.log(`Sending email to ${to}: ${subject}`)
 		console.log(`Sending email to ${to}: ${subject}`)
 	}
 }

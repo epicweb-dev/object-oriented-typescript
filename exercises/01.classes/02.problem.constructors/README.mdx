@@ -18,18 +18,47 @@ class User {
 }
 ```
 
-🐨 Open <InlineFile file="index.ts" /> and:
+## Private Fields
 
-1. Refactor classes to use parameter properties
-2. Use default parameter values
-3. Make some parameters optional
-
-💰 Parameter property syntax:
+JavaScript has native private fields using the `#` prefix:
 
 ```ts
-constructor(public name: string, private age: number = 0) {}
+class BankAccount {
+	#balance: number = 0 // Truly private - not accessible outside the class
+
+	deposit(amount: number) {
+		this.#balance += amount
+	}
+}
+
+const account = new BankAccount()
+account.#balance // ❌ Error! Private field not accessible
 ```
 
-📜 [TypeScript Handbook - Parameter Properties](https://www.typescriptlang.org/docs/handbook/2/classes.html#parameter-properties)
+🐨 Open <InlineFile file="index.ts" /> and:
+
+1. Create classes using parameter property shorthand
+2. Use default parameter values
+3. Use `#` prefix for fields that should be private
+
+💰 Parameter property shorthand:
+
+```ts
+constructor(public name: string, public email: string) {}
+```
+
+💰 Private field syntax:
+
+```ts
+class Counter {
+	#count: number = 0
+
+	increment() {
+		this.#count++
+	}
+}
+```
+
+📜 [MDN - Private class features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
 
 🐨 Once you've completed the exercise, run `node index.ts` in the playground to test your work!

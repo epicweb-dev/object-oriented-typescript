@@ -33,10 +33,14 @@ class Engine {
 }
 
 class Car {
-	private engine: Engine // Car HAS-A Engine
+	#engine: Engine // Car HAS-A Engine
+
+	constructor(engine: Engine) {
+		this.#engine = engine
+	}
 
 	start(): void {
-		this.engine.start()
+		this.#engine.start()
 	}
 }
 ```
@@ -56,9 +60,12 @@ Use composition when:
 ```ts
 // Object composition (OOP)
 class EmailService {
-	constructor(private logger: Logger) {}
+	#logger: Logger
+	constructor(logger: Logger) {
+		this.#logger = logger
+	}
 	send(email: Email) {
-		this.logger.log('Sending...')
+		this.#logger.log('Sending...')
 		// ...
 	}
 }
