@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
+// @ts-ignore - playground may not have correct types initially
 import * as solution from './index.ts'
 
 await test('Product class should be exported', () => {
