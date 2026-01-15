@@ -1,5 +1,5 @@
 {
-  "name": "exercises_06.composition-vs-inheritance_01.problem.when-to-use",
+  "name": "exercises_05.composition-vs-inheritance_01.problem.when-to-use",
   "type": "module",
   "scripts": {
     "start": "node index.ts",

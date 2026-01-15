@@ -1,5 +1,5 @@
 {
-  "name": "exercises_03.interfaces-and-classes_02.problem.programming-to-abstractions",
+  "name": "exercises_02.interfaces-and-classes_02.problem.programming-to-abstractions",
   "type": "module",
   "scripts": {
     "start": "node index.ts",

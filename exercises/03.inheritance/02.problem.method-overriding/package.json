@@ -1,5 +1,5 @@
 {
-  "name": "exercises_04.inheritance_02.problem.method-overriding",
+  "name": "exercises_03.inheritance_02.problem.method-overriding",
   "type": "module",
   "scripts": {
     "start": "node index.ts",
