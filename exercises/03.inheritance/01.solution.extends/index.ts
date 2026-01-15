@@ -1,6 +1,6 @@
 // Extends - Class Inheritance
 
-export class Shape {
+class Shape {
 	color: string
 
 	constructor(color: string) {
@@ -8,7 +8,7 @@ export class Shape {
 	}
 }
 
-export class Circle extends Shape {
+class Circle extends Shape {
 	radius: number
 
 	constructor(color: string, radius: number) {
@@ -17,7 +17,7 @@ export class Circle extends Shape {
 	}
 }
 
-export class Rectangle extends Shape {
+class Rectangle extends Shape {
 	width: number
 	height: number
 
@@ -35,3 +35,18 @@ console.log(circle.color) // ✅ Inherited from Shape
 console.log(circle.radius) // ✅ Defined in Circle
 console.log(rectangle.color) // ✅ Inherited from Shape
 console.log(rectangle.width, rectangle.height) // ✅ Defined in Rectangle
+
+const sampleCircle = new Circle('red', 5)
+const sampleRectangle = new Rectangle('blue', 10, 20)
+
+console.log(
+	'Results JSON:',
+	JSON.stringify({
+		circle: { color: sampleCircle.color, radius: sampleCircle.radius },
+		rectangle: {
+			color: sampleRectangle.color,
+			width: sampleRectangle.width,
+			height: sampleRectangle.height,
+		},
+	}),
+)

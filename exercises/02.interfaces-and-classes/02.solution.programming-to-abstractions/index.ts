@@ -1,10 +1,10 @@
 // Programming to Abstractions
 
-export interface PaymentMethod {
+interface PaymentMethod {
 	pay(amount: number): string
 }
 
-export class CreditCard implements PaymentMethod {
+class CreditCard implements PaymentMethod {
 	cardNumber: string
 
 	constructor(cardNumber: string) {
@@ -16,7 +16,7 @@ export class CreditCard implements PaymentMethod {
 	}
 }
 
-export class PayPal implements PaymentMethod {
+class PayPal implements PaymentMethod {
 	email: string
 
 	constructor(email: string) {
@@ -29,7 +29,7 @@ export class PayPal implements PaymentMethod {
 }
 
 // ✅ Function accepts interface type, not concrete class
-export function processPayment(method: PaymentMethod, amount: number) {
+function processPayment(method: PaymentMethod, amount: number) {
 	return method.pay(amount)
 }
 
@@ -38,3 +38,16 @@ const paypal = new PayPal('user@example.com')
 
 console.log(processPayment(creditCard, 100))
 console.log(processPayment(paypal, 50))
+
+const testCard = new CreditCard('1111-2222-3333-4444')
+const testPayPal = new PayPal('test@example.com')
+
+console.log(
+	'Results JSON:',
+	JSON.stringify({
+		creditCard: processPayment(creditCard, 100),
+		paypal: processPayment(paypal, 50),
+		testCard: processPayment(testCard, 75),
+		testPayPal: processPayment(testPayPal, 25),
+	}),
+)

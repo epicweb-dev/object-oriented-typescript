@@ -1,10 +1,10 @@
 // Implementing Interfaces
 
-export interface PaymentMethod {
+interface PaymentMethod {
 	pay(amount: number): string
 }
 
-export class CreditCard implements PaymentMethod {
+class CreditCard implements PaymentMethod {
 	cardNumber: string
 
 	constructor(cardNumber: string) {
@@ -16,7 +16,7 @@ export class CreditCard implements PaymentMethod {
 	}
 }
 
-export class PayPal implements PaymentMethod {
+class PayPal implements PaymentMethod {
 	email: string
 
 	constructor(email: string) {
@@ -33,3 +33,19 @@ const paypal = new PayPal('user@example.com')
 
 console.log(creditCard.pay(100))
 console.log(paypal.pay(50))
+
+console.log(
+	'Results JSON:',
+	JSON.stringify({
+		creditCard: {
+			cardNumber: creditCard.cardNumber,
+			payResult: creditCard.pay(100),
+			hasPay: typeof creditCard.pay === 'function',
+		},
+		paypal: {
+			email: paypal.email,
+			payResult: paypal.pay(50),
+			hasPay: typeof paypal.pay === 'function',
+		},
+	}),
+)

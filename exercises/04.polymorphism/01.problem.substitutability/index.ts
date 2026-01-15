@@ -21,3 +21,19 @@
 // const player = new MediaPlayer()
 // console.log(player.playFile(audio)) // Should work - AudioFile is substitutable for MediaFile
 // console.log(player.playFile(video)) // Should work - VideoFile is substitutable for MediaFile
+
+// 🐨 When you're done, uncomment this:
+// const base = new MediaFile('file.mp3')
+// const basePlayer = new MediaPlayer()
+// console.log(
+// 	'Results JSON:',
+// 	JSON.stringify({
+// 		base: basePlayer.playFile(base),
+// 		audio: basePlayer.playFile(audio),
+// 		video: basePlayer.playFile(video),
+// 		substitutable: {
+// 			audioIncludes: basePlayer.playFile(audio).includes('audio'),
+// 			videoIncludes: basePlayer.playFile(video).includes('video'),
+// 		},
+// 	}),
+// )

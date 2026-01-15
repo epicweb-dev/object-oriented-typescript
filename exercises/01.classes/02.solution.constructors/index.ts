@@ -1,17 +1,24 @@
 // Constructor Patterns
 
-export class User {
-	constructor(
-		public name: string,
-		public email: string,
-		public role: string = 'user',
-	) {}
+class User {
+	name: string
+	email: string
+	role: string
+
+	constructor(name: string, email: string, role: string = 'user') {
+		this.name = name
+		this.email = email
+		this.role = role
+	}
 }
 
-export class BankAccount {
+class BankAccount {
 	#balance: number = 0
+	accountNumber: string
 
-	constructor(public accountNumber: string) {}
+	constructor(accountNumber: string) {
+		this.accountNumber = accountNumber
+	}
 
 	deposit(amount: number): void {
 		this.#balance += amount
@@ -22,12 +29,20 @@ export class BankAccount {
 	}
 }
 
-export class Config {
+class Config {
+	host: string
+	port: number
+	debug: boolean
+
 	constructor(
-		public host: string = 'localhost',
-		public port: number = 3000,
-		public debug: boolean = false,
-	) {}
+		host: string = 'localhost',
+		port: number = 3000,
+		debug: boolean = false,
+	) {
+		this.host = host
+		this.port = port
+		this.debug = debug
+	}
 }
 
 const user = new User('Alice', 'alice@example.com')
@@ -44,3 +59,28 @@ const config = new Config()
 const customConfig = new Config('example.com', 8080, true)
 console.log(`Default config: ${config.host}:${config.port}`)
 console.log(`Custom config: ${customConfig.host}:${customConfig.port}`)
+
+const sampleAccount = new BankAccount('12345')
+sampleAccount.deposit(100)
+const balanceAfterFirstDeposit = sampleAccount.getBalance()
+sampleAccount.deposit(50)
+
+console.log(
+	'Results JSON:',
+	JSON.stringify({
+		user: { name: user.name, email: user.email, role: user.role },
+		admin: { name: admin.name, email: admin.email, role: admin.role },
+		account: {
+			accountNumber: sampleAccount.accountNumber,
+			initialBalance: 0,
+			balanceAfterFirstDeposit,
+			balanceAfterSecondDeposit: sampleAccount.getBalance(),
+		},
+		config: { host: config.host, port: config.port, debug: config.debug },
+		customConfig: {
+			host: customConfig.host,
+			port: customConfig.port,
+			debug: customConfig.debug,
+		},
+	}),
+)

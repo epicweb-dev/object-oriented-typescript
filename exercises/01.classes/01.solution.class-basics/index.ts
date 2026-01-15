@@ -1,6 +1,6 @@
 // Creating Classes
 
-export class Product {
+class Product {
 	name: string
 	price: number
 
@@ -14,7 +14,7 @@ export class Product {
 	}
 }
 
-export class ShoppingCart {
+class ShoppingCart {
 	items: Array<Product>
 
 	constructor() {
@@ -40,3 +40,32 @@ const cart = new ShoppingCart()
 cart.addItem(laptop)
 cart.addItem(mouse)
 console.log(`Cart total: $${cart.getTotal()}`)
+
+const sampleCart = new ShoppingCart()
+const emptyCart = new ShoppingCart()
+const sampleLaptop = new Product('Laptop', 999.99)
+const sampleMouse = new Product('Mouse', 29.99)
+sampleCart.addItem(sampleLaptop)
+const afterFirstAddCount = sampleCart.items.length
+sampleCart.addItem(sampleMouse)
+
+console.log(
+	'Results JSON:',
+	JSON.stringify({
+		product: {
+			name: sampleLaptop.name,
+			price: sampleLaptop.price,
+			description: sampleLaptop.getDescription(),
+		},
+		cart: {
+			itemsCount: sampleCart.items.length,
+			itemsAfterFirstAdd: afterFirstAddCount,
+			firstItemName: sampleCart.items[0]?.name,
+			secondItemName: sampleCart.items[1]?.name,
+			total: sampleCart.getTotal(),
+		},
+		emptyCart: {
+			itemsCount: emptyCart.items.length,
+		},
+	}),
+)

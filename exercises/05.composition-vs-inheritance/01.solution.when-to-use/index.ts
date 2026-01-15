@@ -1,20 +1,20 @@
 // When to Use Composition vs Inheritance
 
 // Inheritance: FileLogger and ConsoleLogger ARE types of Logger
-export class Logger {
+class Logger {
 	log(message: string): void {
 		console.log(`Log: ${message}`)
 	}
 }
 
-export class FileLogger extends Logger {
+class FileLogger extends Logger {
 	// FileLogger IS-A Logger
 	log(message: string): void {
 		console.log(`File Log: ${message}`)
 	}
 }
 
-export class ConsoleLogger extends Logger {
+class ConsoleLogger extends Logger {
 	// ConsoleLogger IS-A Logger
 	log(message: string): void {
 		console.log(`Console Log: ${message}`)
@@ -22,7 +22,7 @@ export class ConsoleLogger extends Logger {
 }
 
 // Composition: EmailService HAS-A Logger (but isn't a Logger itself)
-export class EmailService {
+class EmailService {
 	#logger: Logger // EmailService HAS-A Logger
 
 	constructor(logger: Logger) {
@@ -47,3 +47,16 @@ const emailService2 = new EmailService(consoleLogger)
 
 emailService1.sendEmail('user@example.com', 'Welcome')
 emailService2.sendEmail('admin@example.com', 'Alert')
+
+console.log(
+	'Results JSON:',
+	JSON.stringify({
+		fileLoggerIsLogger: fileLogger instanceof Logger,
+		consoleLoggerIsLogger: consoleLogger instanceof Logger,
+		emailService1Defined: emailService1 !== undefined,
+		emailService2Defined: emailService2 !== undefined,
+		sendEmailExists: typeof emailService1.sendEmail === 'function',
+		emailService1IsInstance: emailService1 instanceof EmailService,
+		emailService2IsInstance: emailService2 instanceof EmailService,
+	}),
+)

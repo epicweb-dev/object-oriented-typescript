@@ -1,9 +1,17 @@
 import assert from 'node:assert/strict'
+import { execSync } from 'node:child_process'
 import { test } from 'node:test'
-import { User, BankAccount, Config } from './index.ts'
+
+const output = execSync('npm start --silent', { encoding: 'utf8' })
+const jsonLine = output
+	.split('\n')
+	.find((line) => line.startsWith('Results JSON:'))
+assert.ok(jsonLine, '🚨 Missing "Results JSON:" output line')
+const { user, admin, account, config, customConfig } = JSON.parse(
+	jsonLine.replace('Results JSON:', '').trim(),
+)
 
 await test('User constructor should set name, email, and default role', () => {
-	const user = new User('Alice', 'alice@example.com')
 	assert.strictEqual(
 		user.name,
 		'Alice',
@@ -22,7 +30,6 @@ await test('User constructor should set name, email, and default role', () => {
 })
 
 await test('User constructor should accept custom role', () => {
-	const admin = new User('Bob', 'bob@example.com', 'admin')
 	assert.strictEqual(
 		admin.name,
 		'Bob',
@@ -41,37 +48,32 @@ await test('User constructor should accept custom role', () => {
 })
 
 await test('BankAccount constructor should set accountNumber and default balance', () => {
-	const account = new BankAccount('12345')
 	assert.strictEqual(
 		account.accountNumber,
 		'12345',
 		'🚨 BankAccount.accountNumber should be "12345" - check your constructor parameter assignment',
 	)
 	assert.strictEqual(
-		account.getBalance(),
+		account.initialBalance,
 		0,
 		'🚨 BankAccount.getBalance() should return 0 initially - check your constructor initialization',
 	)
 })
 
 await test('BankAccount deposit should increase balance', () => {
-	const account = new BankAccount('12345')
-	account.deposit(100)
 	assert.strictEqual(
-		account.getBalance(),
+		account.balanceAfterFirstDeposit,
 		100,
 		'🚨 After depositing 100, getBalance() should return 100 - check your deposit method implementation',
 	)
-	account.deposit(50)
 	assert.strictEqual(
-		account.getBalance(),
+		account.balanceAfterSecondDeposit,
 		150,
 		'🚨 After depositing another 50, getBalance() should return 150 - check your deposit method accumulates correctly',
 	)
 })
 
 await test('Config constructor should use default values', () => {
-	const config = new Config()
 	assert.strictEqual(
 		config.host,
 		'localhost',
@@ -90,7 +92,6 @@ await test('Config constructor should use default values', () => {
 })
 
 await test('Config constructor should accept custom values', () => {
-	const customConfig = new Config('example.com', 8080, true)
 	assert.strictEqual(
 		customConfig.host,
 		'example.com',

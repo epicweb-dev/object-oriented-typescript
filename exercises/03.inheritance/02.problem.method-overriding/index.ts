@@ -20,3 +20,18 @@
 // const rectangle = new Rectangle('blue', 10, 20)
 // console.log(circle.getArea()) // Should print ~78.54
 // console.log(rectangle.getArea()) // Should print 200
+
+// 🐨 When you're done, uncomment this:
+// const baseShape = new Shape('red')
+// const sampleCircle = new Circle('red', 5)
+// const sampleRectangle = new Rectangle('blue', 10, 20)
+// const circleArea = sampleCircle.getArea()
+// const rectangleArea = sampleRectangle.getArea()
+// console.log(
+// 	'Results JSON:',
+// 	JSON.stringify({
+// 		shapeArea: baseShape.getArea(),
+// 		circleArea,
+// 		rectangleArea,
+// 	}),
+// )

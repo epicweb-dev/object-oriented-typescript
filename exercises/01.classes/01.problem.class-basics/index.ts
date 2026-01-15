@@ -18,3 +18,26 @@
 // cart.addItem(laptop)
 // cart.addItem(mouse)
 // console.log(cart.getTotal())
+
+// 🐨 When you're done, uncomment this:
+// const sampleCart = new ShoppingCart()
+// const sampleLaptop = new Product('Laptop', 999.99)
+// const sampleMouse = new Product('Mouse', 29.99)
+// sampleCart.addItem(sampleLaptop)
+// sampleCart.addItem(sampleMouse)
+// console.log(
+// 	'Results JSON:',
+// 	JSON.stringify({
+// 		product: {
+// 			name: sampleLaptop.name,
+// 			price: sampleLaptop.price,
+// 			description: sampleLaptop.getDescription(),
+// 		},
+// 		cart: {
+// 			itemsCount: sampleCart.items.length,
+// 			firstItemName: sampleCart.items[0]?.name,
+// 			secondItemName: sampleCart.items[1]?.name,
+// 			total: sampleCart.getTotal(),
+// 		},
+// 	}),
+// )

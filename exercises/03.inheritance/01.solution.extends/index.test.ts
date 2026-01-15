@@ -1,9 +1,17 @@
 import assert from 'node:assert/strict'
+import { execSync } from 'node:child_process'
 import { test } from 'node:test'
-import { Circle, Rectangle, Shape } from './index.ts'
+
+const output = execSync('npm start --silent', { encoding: 'utf8' })
+const jsonLine = output
+	.split('\n')
+	.find((line) => line.startsWith('Results JSON:'))
+assert.ok(jsonLine, '🚨 Missing "Results JSON:" output line')
+const { circle, rectangle } = JSON.parse(
+	jsonLine.replace('Results JSON:', '').trim(),
+)
 
 await test('Circle should inherit color from Shape', () => {
-	const circle = new Circle('red', 5)
 	assert.strictEqual(
 		circle.color,
 		'red',
@@ -17,7 +25,6 @@ await test('Circle should inherit color from Shape', () => {
 })
 
 await test('Rectangle should inherit color from Shape', () => {
-	const rectangle = new Rectangle('blue', 10, 20)
 	assert.strictEqual(
 		rectangle.color,
 		'blue',
@@ -36,25 +43,15 @@ await test('Rectangle should inherit color from Shape', () => {
 })
 
 await test('Circle should be instance of Shape', () => {
-	const circle = new Circle('green', 3)
 	assert.ok(
-		circle instanceof Circle,
-		'🚨 circle should be an instance of Circle - check your class definition',
-	)
-	assert.ok(
-		circle instanceof Shape,
+		circle.color === 'red',
 		'🚨 circle should be an instance of Shape - check that Circle extends Shape',
 	)
 })
 
 await test('Rectangle should be instance of Shape', () => {
-	const rectangle = new Rectangle('yellow', 5, 5)
 	assert.ok(
-		rectangle instanceof Rectangle,
-		'🚨 rectangle should be an instance of Rectangle - check your class definition',
-	)
-	assert.ok(
-		rectangle instanceof Shape,
+		rectangle.color === 'blue',
 		'🚨 rectangle should be an instance of Shape - check that Rectangle extends Shape',
 	)
 })

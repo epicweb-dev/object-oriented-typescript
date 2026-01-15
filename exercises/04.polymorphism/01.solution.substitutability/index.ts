@@ -1,6 +1,6 @@
 // Substitutability - Polymorphism
 
-export class MediaFile {
+class MediaFile {
 	filename: string
 
 	constructor(filename: string) {
@@ -12,19 +12,19 @@ export class MediaFile {
 	}
 }
 
-export class AudioFile extends MediaFile {
+class AudioFile extends MediaFile {
 	play(): string {
 		return `Playing audio: ${this.filename}`
 	}
 }
 
-export class VideoFile extends MediaFile {
+class VideoFile extends MediaFile {
 	play(): string {
 		return `Playing video: ${this.filename}`
 	}
 }
 
-export class MediaPlayer {
+class MediaPlayer {
 	playFile(media: MediaFile): string {
 		// ✅ Works with MediaFile or any subclass (polymorphism)
 		return media.play()
@@ -38,3 +38,19 @@ const player = new MediaPlayer()
 // ✅ Both work because AudioFile and VideoFile are substitutable for MediaFile
 console.log(player.playFile(audio)) // "Playing audio: song.mp3"
 console.log(player.playFile(video)) // "Playing video: movie.mp4"
+
+const base = new MediaFile('file.mp3')
+const basePlayer = new MediaPlayer()
+
+console.log(
+	'Results JSON:',
+	JSON.stringify({
+		base: basePlayer.playFile(base),
+		audio: basePlayer.playFile(audio),
+		video: basePlayer.playFile(video),
+		substitutable: {
+			audioIncludes: basePlayer.playFile(audio).includes('audio'),
+			videoIncludes: basePlayer.playFile(video).includes('video'),
+		},
+	}),
+)
