@@ -1,15 +1,30 @@
 import assert from 'node:assert/strict'
-import { execSync } from 'node:child_process'
 import { test } from 'node:test'
+import * as solution from './index.ts'
 
-const output = execSync('npm start --silent', { encoding: 'utf8' })
-const jsonLine = output.split('\n').find((line) => line.startsWith('Results:'))
-assert.ok(jsonLine, '🚨 Missing "Results:" output line')
-const { user, admin, account, config, customConfig } = JSON.parse(
-	jsonLine.replace('Results:', '').trim(),
-)
+await test('User class should be exported', () => {
+	assert.ok(
+		'User' in solution,
+		'🚨 Make sure you export "User" - add: export { User, BankAccount, Config }',
+	)
+})
+
+await test('BankAccount class should be exported', () => {
+	assert.ok(
+		'BankAccount' in solution,
+		'🚨 Make sure you export "BankAccount" - add: export { User, BankAccount, Config }',
+	)
+})
+
+await test('Config class should be exported', () => {
+	assert.ok(
+		'Config' in solution,
+		'🚨 Make sure you export "Config" - add: export { User, BankAccount, Config }',
+	)
+})
 
 await test('User constructor should set name, email, and default role', () => {
+	const user = new solution.User('Alice', 'alice@example.com')
 	assert.strictEqual(
 		user.name,
 		'Alice',
@@ -28,6 +43,7 @@ await test('User constructor should set name, email, and default role', () => {
 })
 
 await test('User constructor should accept custom role', () => {
+	const admin = new solution.User('Bob', 'bob@example.com', 'admin')
 	assert.strictEqual(
 		admin.name,
 		'Bob',
@@ -46,32 +62,39 @@ await test('User constructor should accept custom role', () => {
 })
 
 await test('BankAccount constructor should set accountNumber and default balance', () => {
+	const sampleAccount = new solution.BankAccount('12345')
 	assert.strictEqual(
-		account.accountNumber,
+		sampleAccount.accountNumber,
 		'12345',
 		'🚨 BankAccount.accountNumber should be "12345" - check your constructor parameter assignment',
 	)
 	assert.strictEqual(
-		account.initialBalance,
+		sampleAccount.getBalance(),
 		0,
 		'🚨 BankAccount.getBalance() should return 0 initially - check your constructor initialization',
 	)
 })
 
 await test('BankAccount deposit should increase balance', () => {
+	const sampleAccount = new solution.BankAccount('12345')
+	sampleAccount.deposit(100)
+	const balanceAfterFirstDeposit = sampleAccount.getBalance()
+	sampleAccount.deposit(50)
+
 	assert.strictEqual(
-		account.balanceAfterFirstDeposit,
+		balanceAfterFirstDeposit,
 		100,
 		'🚨 After depositing 100, getBalance() should return 100 - check your deposit method implementation',
 	)
 	assert.strictEqual(
-		account.balanceAfterSecondDeposit,
+		sampleAccount.getBalance(),
 		150,
 		'🚨 After depositing another 50, getBalance() should return 150 - check your deposit method accumulates correctly',
 	)
 })
 
 await test('Config constructor should use default values', () => {
+	const config = new solution.Config()
 	assert.strictEqual(
 		config.host,
 		'localhost',
@@ -90,6 +113,7 @@ await test('Config constructor should use default values', () => {
 })
 
 await test('Config constructor should accept custom values', () => {
+	const customConfig = new solution.Config('example.com', 8080, true)
 	assert.strictEqual(
 		customConfig.host,
 		'example.com',

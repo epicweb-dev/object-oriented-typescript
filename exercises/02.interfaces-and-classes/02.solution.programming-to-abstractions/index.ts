@@ -39,15 +39,4 @@ const paypal = new PayPal('user@example.com')
 console.log(processPayment(creditCard, 100))
 console.log(processPayment(paypal, 50))
 
-const testCard = new CreditCard('1111-2222-3333-4444')
-const testPayPal = new PayPal('test@example.com')
-
-console.log(
-	'Results:',
-	JSON.stringify({
-		creditCard: processPayment(creditCard, 100),
-		paypal: processPayment(paypal, 50),
-		testCard: processPayment(testCard, 75),
-		testPayPal: processPayment(testPayPal, 25),
-	}),
-)
+export { CreditCard, PayPal, processPayment }

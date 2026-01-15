@@ -2,7 +2,7 @@
   "name": "exercises_04.polymorphism_01.problem.substitutability",
   "type": "module",
   "scripts": {
-    "start": "node index.ts",
+    "start": "npx @kentcdodds/log-module@latest ./index.ts",
     "test": "node --test index.test.ts"
   }
 }

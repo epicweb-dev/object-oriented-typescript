@@ -1,23 +1,40 @@
 import assert from 'node:assert/strict'
-import { execSync } from 'node:child_process'
 import { test } from 'node:test'
+import * as solution from './index.ts'
 
-const output = execSync('npm start --silent', { encoding: 'utf8' })
-const jsonLine = output.split('\n').find((line) => line.startsWith('Results:'))
-assert.ok(jsonLine, '🚨 Missing "Results:" output line')
-const { shapeArea, circleArea, rectangleArea } = JSON.parse(
-	jsonLine.replace('Results:', '').trim(),
-)
+await test('Shape class should be exported', () => {
+	assert.ok(
+		'Shape' in solution,
+		'🚨 Make sure you export "Shape" - add: export { Shape, Circle, Rectangle }',
+	)
+})
+
+await test('Circle class should be exported', () => {
+	assert.ok(
+		'Circle' in solution,
+		'🚨 Make sure you export "Circle" - add: export { Shape, Circle, Rectangle }',
+	)
+})
+
+await test('Rectangle class should be exported', () => {
+	assert.ok(
+		'Rectangle' in solution,
+		'🚨 Make sure you export "Rectangle" - add: export { Shape, Circle, Rectangle }',
+	)
+})
 
 await test('Shape getArea should return 0', () => {
+	const baseShape = new solution.Shape('red')
 	assert.strictEqual(
-		shapeArea,
+		baseShape.getArea(),
 		0,
 		'🚨 Shape.getArea() should return 0 - check your base class method implementation',
 	)
 })
 
 await test('Circle should override getArea to calculate circle area', () => {
+	const sampleCircle = new solution.Circle('red', 5)
+	const circleArea = sampleCircle.getArea()
 	assert.ok(
 		Math.abs(circleArea - Math.PI * 25) < 0.01,
 		'🚨 Circle.getArea() should be approximately Math.PI * 25 - check that you override getArea() with the circle area formula',
@@ -29,6 +46,8 @@ await test('Circle should override getArea to calculate circle area', () => {
 })
 
 await test('Rectangle should override getArea to calculate rectangle area', () => {
+	const sampleRectangle = new solution.Rectangle('blue', 10, 20)
+	const rectangleArea = sampleRectangle.getArea()
 	assert.strictEqual(
 		rectangleArea,
 		200,
@@ -37,6 +56,11 @@ await test('Rectangle should override getArea to calculate rectangle area', () =
 })
 
 await test('Different shapes should have different area calculations', () => {
+	const sampleCircle = new solution.Circle('red', 5)
+	const sampleRectangle = new solution.Rectangle('blue', 10, 20)
+	const circleArea = sampleCircle.getArea()
+	const rectangleArea = sampleRectangle.getArea()
+
 	assert.ok(
 		circleArea > 0,
 		'🚨 Circle area should be greater than 0 - check your getArea() override implementation',

@@ -19,19 +19,5 @@
 // console.log(creditCard.pay(100))
 // console.log(paypal.pay(50))
 
-// 🐨 When you're done, uncomment this:
-// console.log(
-// 	'Results:',
-// 	JSON.stringify({
-// 		creditCard: {
-// 			cardNumber: creditCard.cardNumber,
-// 			payResult: creditCard.pay(100),
-// 			hasPay: typeof creditCard.pay === 'function',
-// 		},
-// 		paypal: {
-// 			email: paypal.email,
-// 			payResult: paypal.pay(50),
-// 			hasPay: typeof paypal.pay === 'function',
-// 		},
-// 	}),
-// )
+// 🐨 Export your classes so we can verify your work
+// 💰 export { CreditCard, PayPal }

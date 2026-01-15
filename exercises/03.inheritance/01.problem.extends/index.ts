@@ -22,17 +22,5 @@
 // console.log(rectangle.color) // ✅ Should work - inherited from Shape
 // console.log(rectangle.width, rectangle.height) // ✅ Should work
 
-// 🐨 When you're done, uncomment this:
-// const sampleCircle = new Circle('red', 5)
-// const sampleRectangle = new Rectangle('blue', 10, 20)
-// console.log(
-// 	'Results:',
-// 	JSON.stringify({
-// 		circle: { color: sampleCircle.color, radius: sampleCircle.radius },
-// 		rectangle: {
-// 			color: sampleRectangle.color,
-// 			width: sampleRectangle.width,
-// 			height: sampleRectangle.height,
-// 		},
-// 	}),
-// )
+// 🐨 Export your classes so we can verify your work
+// 💰 export { Shape, Circle, Rectangle }

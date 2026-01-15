@@ -2,7 +2,7 @@
   "name": "exercises_03.inheritance_01.problem.extends",
   "type": "module",
   "scripts": {
-    "start": "node index.ts",
+    "start": "npx @kentcdodds/log-module@latest ./index.ts",
     "test": "node --test index.test.ts"
   }
 }

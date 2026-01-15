@@ -2,7 +2,7 @@
   "name": "exercises_05.composition-vs-inheritance_01.solution.when-to-use",
   "type": "module",
   "scripts": {
-    "start": "node index.ts",
+    "start": "npx @kentcdodds/log-module@latest ./index.ts",
     "test": "node --test index.test.ts"
   }
 }

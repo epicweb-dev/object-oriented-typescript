@@ -39,18 +39,4 @@ const player = new MediaPlayer()
 console.log(player.playFile(audio)) // "Playing audio: song.mp3"
 console.log(player.playFile(video)) // "Playing video: movie.mp4"
 
-const base = new MediaFile('file.mp3')
-const basePlayer = new MediaPlayer()
-
-console.log(
-	'Results:',
-	JSON.stringify({
-		base: basePlayer.playFile(base),
-		audio: basePlayer.playFile(audio),
-		video: basePlayer.playFile(video),
-		substitutable: {
-			audioIncludes: basePlayer.playFile(audio).includes('audio'),
-			videoIncludes: basePlayer.playFile(video).includes('video'),
-		},
-	}),
-)
+export { MediaFile, AudioFile, VideoFile, MediaPlayer }

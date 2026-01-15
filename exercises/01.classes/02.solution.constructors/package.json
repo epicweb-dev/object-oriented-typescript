@@ -2,7 +2,7 @@
   "name": "exercises_01.classes_02.solution.constructors",
   "type": "module",
   "scripts": {
-    "start": "node index.ts",
-    "test": "node --experimental-transform-types --test index.test.ts"
+    "start": "npx @kentcdodds/log-module@latest ./index.ts",
+    "test": "node --test index.test.ts"
   }
 }

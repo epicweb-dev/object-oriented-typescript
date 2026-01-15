@@ -36,17 +36,4 @@ console.log(circle.radius) // ✅ Defined in Circle
 console.log(rectangle.color) // ✅ Inherited from Shape
 console.log(rectangle.width, rectangle.height) // ✅ Defined in Rectangle
 
-const sampleCircle = new Circle('red', 5)
-const sampleRectangle = new Rectangle('blue', 10, 20)
-
-console.log(
-	'Results:',
-	JSON.stringify({
-		circle: { color: sampleCircle.color, radius: sampleCircle.radius },
-		rectangle: {
-			color: sampleRectangle.color,
-			width: sampleRectangle.width,
-			height: sampleRectangle.height,
-		},
-	}),
-)
+export { Shape, Circle, Rectangle }

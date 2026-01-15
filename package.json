@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@epic-web/config": "^1.21.3",
+    "@kentcdodds/log-module": "^1.0.1",
     "eslint": "^9.39.2",
     "prettier": "^3.7.4",
     "typescript": "^5.9.3"

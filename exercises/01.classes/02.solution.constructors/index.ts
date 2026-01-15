@@ -60,27 +60,4 @@ const customConfig = new Config('example.com', 8080, true)
 console.log(`Default config: ${config.host}:${config.port}`)
 console.log(`Custom config: ${customConfig.host}:${customConfig.port}`)
 
-const sampleAccount = new BankAccount('12345')
-sampleAccount.deposit(100)
-const balanceAfterFirstDeposit = sampleAccount.getBalance()
-sampleAccount.deposit(50)
-
-console.log(
-	'Results:',
-	JSON.stringify({
-		user: { name: user.name, email: user.email, role: user.role },
-		admin: { name: admin.name, email: admin.email, role: admin.role },
-		account: {
-			accountNumber: sampleAccount.accountNumber,
-			initialBalance: 0,
-			balanceAfterFirstDeposit,
-			balanceAfterSecondDeposit: sampleAccount.getBalance(),
-		},
-		config: { host: config.host, port: config.port, debug: config.debug },
-		customConfig: {
-			host: customConfig.host,
-			port: customConfig.port,
-			debug: customConfig.debug,
-		},
-	}),
-)
+export { User, BankAccount, Config }

@@ -48,18 +48,4 @@ const rectangle = new Rectangle('blue', 10, 20)
 console.log(circle.getArea()) // ~78.54
 console.log(rectangle.getArea()) // 200
 
-const baseShape = new Shape('red')
-const sampleCircle = new Circle('red', 5)
-const sampleRectangle = new Rectangle('blue', 10, 20)
-
-const circleArea = sampleCircle.getArea()
-const rectangleArea = sampleRectangle.getArea()
-
-console.log(
-	'Results:',
-	JSON.stringify({
-		shapeArea: baseShape.getArea(),
-		circleArea,
-		rectangleArea,
-	}),
-)
+export { Shape, Circle, Rectangle }

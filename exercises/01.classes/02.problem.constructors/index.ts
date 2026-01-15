@@ -26,26 +26,5 @@
 // const config = new Config()
 // const customConfig = new Config('example.com', 8080, true)
 
-// 🐨 When you're done, uncomment this:
-// const sampleAccount = new BankAccount('12345')
-// sampleAccount.deposit(100)
-// sampleAccount.deposit(50)
-// console.log(
-// 	'Results:',
-// 	JSON.stringify({
-// 		user: { name: user.name, email: user.email, role: user.role },
-// 		admin: { name: admin.name, email: admin.email, role: admin.role },
-// 		account: {
-// 			accountNumber: sampleAccount.accountNumber,
-// 			initialBalance: 0,
-// 			balanceAfterFirstDeposit: 100,
-// 			balanceAfterSecondDeposit: 150,
-// 		},
-// 		config: { host: config.host, port: config.port, debug: config.debug },
-// 		customConfig: {
-// 			host: customConfig.host,
-// 			port: customConfig.port,
-// 			debug: customConfig.debug,
-// 		},
-// 	}),
-// )
+// 🐨 Export your classes so we can verify your work
+// 💰 export { User, BankAccount, Config }

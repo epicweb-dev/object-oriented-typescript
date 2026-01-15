@@ -27,16 +27,5 @@
 // consoleLogger.log('Console ready')
 // emailService.sendEmail('user@example.com', 'Welcome')
 
-// 🐨 When you're done, uncomment this:
-// console.log(
-// 	'Results:',
-// 	JSON.stringify({
-// 		fileLoggerIsLogger: fileLogger instanceof Logger,
-// 		consoleLoggerIsLogger: consoleLogger instanceof Logger,
-// 		emailService1Defined: emailService !== undefined,
-// 		emailService2Defined: new EmailService(consoleLogger) !== undefined,
-// 		sendEmailExists: typeof emailService.sendEmail === 'function',
-// 		emailService1IsInstance: emailService instanceof EmailService,
-// 		emailService2IsInstance: new EmailService(consoleLogger) instanceof EmailService,
-// 	}),
-// )
+// 🐨 Export your classes so we can verify your work
+// 💰 export { Logger, FileLogger, ConsoleLogger, EmailService }
