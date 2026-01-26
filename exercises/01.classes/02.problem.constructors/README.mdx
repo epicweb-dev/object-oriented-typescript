@@ -42,22 +42,8 @@ account.#balance // ❌ Error! Private field not accessible
 2. Use default parameter values
 3. Use `#` prefix for fields that should be private
 
-💰 Parameter property shorthand (reference only):
+💰 This runtime doesn’t support parameter property shorthand.
 
-```ts
-constructor(public name: string, public email: string) {}
-```
-
-💰 Private field syntax:
-
-```ts
-class Counter {
-	#count: number = 0
-
-	increment() {
-		this.#count++
-	}
-}
-```
+💰 Use `#` to declare a private field.
 
 📜 [MDN - Private class features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)

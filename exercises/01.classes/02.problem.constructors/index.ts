@@ -28,4 +28,4 @@
 // const customConfig = new Config('example.com', 8080, true)
 
 // 🐨 Export your classes so we can verify your work
-// 💰 export { User, BankAccount, Config }
+// 💰 Export the classes you created

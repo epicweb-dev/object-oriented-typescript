@@ -10,21 +10,7 @@ method to provide its own implementation.
 3. Override `getArea()` in `Rectangle` to return width × height
 4. Optionally use `super` to call the parent method
 
-💰 Method overriding syntax:
-
-```ts
-class Base {
-	method(): ReturnType {
-		return baseValue
-	}
-}
-
-class Derived extends Base {
-	method(): ReturnType {
-		return derivedValue // Overrides parent method
-	}
-}
-```
+💰 Override a method by redefining it in the subclass.
 
 💰 You can call `super.method()` to use the parent's implementation if needed.
 

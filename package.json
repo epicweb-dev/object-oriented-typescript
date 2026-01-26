@@ -15,7 +15,8 @@
       "host": "www.epicweb.dev",
       "displayName": "EpicWeb.dev",
       "displayNameShort": "Epic Web"
-    }
+    },
+    "appType": "export"
   },
   "type": "module",
   "scripts": {

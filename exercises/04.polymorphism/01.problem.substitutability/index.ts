@@ -23,4 +23,4 @@
 // console.log(player.playFile(video)) // Should work - VideoFile is substitutable for MediaFile
 
 // 🐨 Export your classes so we can verify your work
-// 💰 export { MediaFile, AudioFile, VideoFile, MediaPlayer }
+// 💰 Export the classes you created

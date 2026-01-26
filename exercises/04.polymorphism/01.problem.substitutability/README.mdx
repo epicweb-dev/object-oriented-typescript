@@ -11,18 +11,6 @@ We'll use polymorphism to handle all media types uniformly.
 4. Create a `MediaPlayer` class with a method that accepts `MediaFile`
 5. Demonstrate that both `AudioFile` and `VideoFile` can be used interchangeably
 
-💰 Polymorphism allows you to:
-
-```ts
-function playMedia(media: MediaFile) {
-	media.play() // Works with MediaFile or any subclass
-}
-
-playMedia(new AudioFile()) // ✅ Works
-playMedia(new VideoFile()) // ✅ Works
-```
-
-💰 The key is using the base class type (`MediaFile`) as the parameter type,
-not the specific subclass types.
+💰 Accept the base class type so any subclass can be used.
 
 📜 [TypeScript Handbook - Classes](https://www.typescriptlang.org/docs/handbook/2/classes.html)

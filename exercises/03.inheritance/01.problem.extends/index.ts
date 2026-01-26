@@ -23,4 +23,4 @@
 // console.log(rectangle.width, rectangle.height) // ✅ Should work
 
 // 🐨 Export your classes so we can verify your work
-// 💰 export { Shape, Circle, Rectangle }
+// 💰 Export the classes you created

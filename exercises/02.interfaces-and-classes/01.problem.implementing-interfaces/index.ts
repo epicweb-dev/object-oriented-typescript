@@ -20,4 +20,4 @@
 // console.log(paypal.pay(50))
 
 // 🐨 Export your classes so we can verify your work
-// 💰 export { CreditCard, PayPal }
+// 💰 Export the classes you created

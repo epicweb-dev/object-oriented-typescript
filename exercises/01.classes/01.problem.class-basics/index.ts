@@ -20,4 +20,4 @@
 // console.log(cart.getTotal())
 
 // 🐨 Export your classes so we can verify your work
-// 💰 export { Product, ShoppingCart }
+// 💰 Export the classes you created

@@ -10,20 +10,6 @@ interfaces to ensure all payment methods follow the same contract.
 3. Create a `PayPal` class that implements `PaymentMethod`
 4. Each class should have its own implementation of `pay()`
 
-💰 Interface syntax:
-
-```ts
-interface InterfaceName {
-	method(): ReturnType
-}
-
-class ClassName implements InterfaceName {
-	method(): ReturnType {
-		// Implementation
-	}
-}
-```
-
-💰 The class must implement all methods defined in the interface.
+💰 Classes that implement an interface must define all its methods.
 
 📜 [TypeScript Handbook - Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html#interfaces-vs-intersections)

@@ -25,4 +25,4 @@
 // console.log(processPayment(paypal, 50))
 
 // 🐨 Export your classes and function so we can verify your work
-// 💰 export { CreditCard, PayPal, processPayment }
+// 💰 Export the classes and function you created

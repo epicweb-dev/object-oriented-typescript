@@ -22,4 +22,4 @@
 // console.log(rectangle.getArea()) // Should print 200
 
 // 🐨 Export your classes so we can verify your work
-// 💰 export { Shape, Circle, Rectangle }
+// 💰 Export the classes you created
