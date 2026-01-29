@@ -6,11 +6,12 @@ concrete classes.
 
 🐨 Open <InlineFile file="index.ts" /> and:
 
-1. Use the `PaymentMethod` interface from the previous exercise
-2. Create a `PaymentProcessor` class with a method that accepts `PaymentMethod`
-3. Write a function that processes payments using the interface type
-4. Test with different payment method implementations
+1. Create a `processPayment` function that accepts a `PaymentMethod` parameter
+2. The function should call `method.pay(amount)` and return the result
+3. Test it with both `CreditCard` and `PayPal` instances
 
-💰 Use the interface type for parameters so different implementations work.
+💰 Use the interface type (`PaymentMethod`) for the parameter instead of a
+concrete class type. This way, the function works with any class that
+implements the interface.
 
 📜 [TypeScript Handbook - Using Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html#using-interfaces)
