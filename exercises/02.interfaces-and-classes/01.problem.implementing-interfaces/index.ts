@@ -8,16 +8,19 @@
 // - Constructor that takes cardNumber
 // - Implement pay(amount: number) returns "Paid $${amount} with credit card ${cardNumber}"
 
+// Test CreditCard
+// const creditCard = new CreditCard('1234-5678-9012-3456')
+// console.log(creditCard.pay(100))
+// console.log(creditCard)
+
 // 🐨 Create a PayPal class that implements PaymentMethod:
 // - Field: email (string)
 // - Constructor that takes email
 // - Implement pay(amount: number) returns "Paid $${amount} with PayPal ${email}"
 
-// Test your classes
-// const creditCard = new CreditCard('1234-5678-9012-3456')
+// Test PayPal
 // const paypal = new PayPal('user@example.com')
-// console.log(creditCard.pay(100))
 // console.log(paypal.pay(50))
+// console.log(paypal)
 
-// 🐨 Export your classes so we can verify your work
-// 💰 Export the classes you created
+// export { CreditCard, PayPal }

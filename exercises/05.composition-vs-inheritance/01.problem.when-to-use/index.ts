@@ -8,9 +8,19 @@
 // - Extends Logger
 // - Override log() to print "File Log: {message}"
 
+// Test FileLogger
+// const fileLogger = new FileLogger()
+// fileLogger.log('File system initialized')
+// console.log(fileLogger)
+
 // 🐨 Create a ConsoleLogger class using INHERITANCE (is-a):
 // - Extends Logger
 // - Override log() to print "Console Log: {message}"
+
+// Test ConsoleLogger
+// const consoleLogger = new ConsoleLogger()
+// consoleLogger.log('Console ready')
+// console.log(consoleLogger)
 
 // 🐨 Create an EmailService class using COMPOSITION (has-a):
 // - Field: #logger (Logger) - private field
@@ -19,13 +29,9 @@
 //   - Uses this.#logger.log() to log the email action
 //   - Prints "Sending email to {to}: {subject}"
 
-// Test your code
-// const fileLogger = new FileLogger()
-// const consoleLogger = new ConsoleLogger()
+// Test EmailService
 // const emailService = new EmailService(fileLogger)
-// fileLogger.log('File system initialized')
-// consoleLogger.log('Console ready')
 // emailService.sendEmail('user@example.com', 'Welcome')
+// console.log(emailService)
 
-// 🐨 Export your classes so we can verify your work
-// 💰 Export the classes you created
+// export { Logger, FileLogger, ConsoleLogger, EmailService }

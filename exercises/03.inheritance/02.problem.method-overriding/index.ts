@@ -10,16 +10,19 @@
 // - Constructor that takes color and radius
 // - Override getArea() to return Math.PI * radius ** 2
 
+// Test Circle
+// const circle = new Circle('red', 5)
+// console.log(circle.getArea()) // Should print ~78.54
+// console.log(circle)
+
 // 🐨 Create a Rectangle class that extends Shape:
 // - Fields: width (number), height (number)
 // - Constructor that takes color, width, and height
 // - Override getArea() to return width * height
 
-// Test your classes
-// const circle = new Circle('red', 5)
+// Test Rectangle
 // const rectangle = new Rectangle('blue', 10, 20)
-// console.log(circle.getArea()) // Should print ~78.54
 // console.log(rectangle.getArea()) // Should print 200
+// console.log(rectangle)
 
-// 🐨 Export your classes so we can verify your work
-// 💰 Export the classes you created
+// export { Shape, Circle, Rectangle }

@@ -9,18 +9,21 @@
 // - Constructor that takes color and radius
 //   - Call super(color) to initialize parent
 
+// Test Circle
+// const circle = new Circle('red', 5)
+// console.log(circle.color) // ✅ Should work - inherited from Shape
+// console.log(circle.radius) // ✅ Should work - defined in Circle
+// console.log(circle)
+
 // 🐨 Create a Rectangle class that extends Shape:
 // - Fields: width (number), height (number)
 // - Constructor that takes color, width, and height
 //   - Call super(color) to initialize parent
 
-// Test your classes
-// const circle = new Circle('red', 5)
+// Test Rectangle
 // const rectangle = new Rectangle('blue', 10, 20)
-// console.log(circle.color) // ✅ Should work - inherited from Shape
-// console.log(circle.radius) // ✅ Should work - defined in Circle
 // console.log(rectangle.color) // ✅ Should work - inherited from Shape
 // console.log(rectangle.width, rectangle.height) // ✅ Should work
+// console.log(rectangle)
 
-// 🐨 Export your classes so we can verify your work
-// 💰 Export the classes you created
+// export { Shape, Circle, Rectangle }

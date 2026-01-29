@@ -9,16 +9,21 @@ JavaScript has native private fields using the `#` prefix. These fields are
 truly private—they can only be accessed inside the class:
 
 ```ts
-class BankAccount {
-	#balance: number = 0 // Truly private - not accessible outside the class
+class Counter {
+	#count: number = 0 // Truly private - not accessible outside the class
 
-	deposit(amount: number) {
-		this.#balance += amount
+	increment() {
+		this.#count++
+	}
+
+	getValue() {
+		return this.#count
 	}
 }
 
-const account = new BankAccount()
-account.#balance // ❌ Error! Private field not accessible
+const counter = new Counter()
+counter.increment()
+counter.#count // ❌ Error! Private field not accessible
 ```
 
 Private fields enable **encapsulation**—hiding internal implementation details
@@ -30,18 +35,20 @@ your code more maintainable.
 Constructors can use default parameter values to make some parameters optional:
 
 ```ts
-class User {
-	name: string
-	role: string
+class Car {
+	make: string
+	model: string
+	year: number
 
-	constructor(name: string, role: string = 'user') {
-		this.name = name
-		this.role = role
+	constructor(make: string, model: string, year: number = 2024) {
+		this.make = make
+		this.model = model
+		this.year = year
 	}
 }
 
-const user = new User('Alice') // role defaults to 'user'
-const admin = new User('Bob', 'admin') // role explicitly set
+const newCar = new Car('Toyota', 'Camry') // year defaults to 2024
+const oldCar = new Car('Ford', 'Mustang', 1965) // year explicitly set
 ```
 
 🐨 Open <InlineFile file="index.ts" /> and:
