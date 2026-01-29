@@ -1,0 +1,57 @@
+# Private Fields and Defaults
+
+👨‍💼 Classes can hide implementation details using private fields and provide
+flexibility with default parameter values.
+
+## Private Fields
+
+JavaScript has native private fields using the `#` prefix. These fields are
+truly private—they can only be accessed inside the class:
+
+```ts
+class BankAccount {
+	#balance: number = 0 // Truly private - not accessible outside the class
+
+	deposit(amount: number) {
+		this.#balance += amount
+	}
+}
+
+const account = new BankAccount()
+account.#balance // ❌ Error! Private field not accessible
+```
+
+Private fields enable **encapsulation**—hiding internal implementation details
+from code outside the class. This prevents accidental modification and makes
+your code more maintainable.
+
+## Default Parameter Values
+
+Constructors can use default parameter values to make some parameters optional:
+
+```ts
+class User {
+	name: string
+	role: string
+
+	constructor(name: string, role: string = 'user') {
+		this.name = name
+		this.role = role
+	}
+}
+
+const user = new User('Alice') // role defaults to 'user'
+const admin = new User('Bob', 'admin') // role explicitly set
+```
+
+🐨 Open <InlineFile file="index.ts" /> and:
+
+1. Use `#` prefix to create private fields
+2. Use default parameter values in constructors
+3. Create classes that encapsulate their internal state
+
+💰 Use `#` to declare a private field—it's truly private, not just a convention.
+
+💰 Default parameters let you create flexible constructors with sensible defaults.
+
+📜 [MDN - Private class features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)

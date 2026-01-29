@@ -1,5 +1,5 @@
 {
-  "name": "exercises_01.classes_02.solution.constructors",
+  "name": "exercises_01.classes_02.problem.private-fields-and-defaults",
   "type": "module",
   "scripts": {
     "start": "npx @kentcdodds/log-module@latest ./index.ts",

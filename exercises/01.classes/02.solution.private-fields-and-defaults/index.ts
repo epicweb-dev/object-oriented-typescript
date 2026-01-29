@@ -1,4 +1,4 @@
-// Constructor Patterns
+// Private Fields and Defaults
 
 class User {
 	name: string

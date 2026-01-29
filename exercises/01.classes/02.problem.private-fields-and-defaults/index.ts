@@ -1,5 +1,4 @@
-// Constructor Patterns
-// 🦉 This runtime does not support parameter property shorthand.
+// Private Fields and Defaults
 
 // 🐨 Create a User class with these fields:
 // - name: string
