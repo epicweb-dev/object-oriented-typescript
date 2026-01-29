@@ -1,0 +1,18 @@
+# Dependency Injection
+
+👨‍💼 Now let's see the power of composition! We can swap different logger
+implementations without changing `EmailService`. This is dependency injection—a
+key benefit of composition.
+
+🐨 Open <InlineFile file="index.ts" /> and:
+
+1. Create a `MockLogger` class that extends `Logger` and stores logs in memory (useful for testing)
+2. Create a `SilentLogger` class that extends `Logger` and does nothing (useful for production)
+3. Both should extend the `Logger` class from step 01
+4. Demonstrate that `EmailService` works with any logger implementation
+
+💰 This is the power of dependency injection: `EmailService` doesn't care which
+logger it gets—it just uses whatever logger is provided. This makes testing easy
+and allows you to swap implementations at runtime.
+
+📜 [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection)

@@ -1,5 +1,5 @@
 {
-  "name": "exercises_03.inheritance_02.problem.method-overriding",
+  "name": "exercises_04.composition-vs-inheritance_01.problem.when-to-use",
   "type": "module",
   "scripts": {
     "start": "npx @kentcdodds/log-module@latest ./index.ts",

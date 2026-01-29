@@ -1,0 +1,16 @@
+# Dependency Injection
+
+👨‍💼 Perfect! You've demonstrated dependency injection in action.
+
+🦉 Notice how `EmailService` doesn't need to know about `MockLogger` or
+`SilentLogger`. It just accepts any `Logger` (or subclass). This is the power
+of composition:
+
+- **Testability**: Use `MockLogger` to verify behavior without side effects
+- **Flexibility**: Swap implementations at runtime
+- **Loose coupling**: `EmailService` doesn't depend on concrete logger classes
+
+💰 Dependency injection is a key benefit of composition. By accepting
+dependencies through the constructor (or methods), you make your code more
+flexible and testable. This is why composition is often preferred over
+inheritance—it gives you more control and flexibility.

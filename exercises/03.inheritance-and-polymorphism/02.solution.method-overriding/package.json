@@ -1,0 +1,8 @@
+{
+  "name": "exercises_03.inheritance-and-polymorphism_02.solution.method-overriding",
+  "type": "module",
+  "scripts": {
+    "start": "npx @kentcdodds/log-module@latest ./index.ts",
+    "test": "node --test index.test.ts"
+  }
+}

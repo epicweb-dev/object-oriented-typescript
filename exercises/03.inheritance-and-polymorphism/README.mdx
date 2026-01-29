@@ -1,0 +1,166 @@
+# Inheritance and Polymorphism
+
+Inheritance allows classes to extend other classes, inheriting their fields and
+methods. This enables code reuse and hierarchical relationships. Polymorphism
+builds on inheritance, allowing you to treat objects of different types uniformly
+through a common interface or base class.
+
+```ts
+class Animal {
+	name: string
+
+	constructor(name: string) {
+		this.name = name
+	}
+
+	makeSound(): string {
+		return 'Some sound'
+	}
+}
+
+class Dog extends Animal {
+	makeSound(): string {
+		return 'Woof!'
+	}
+}
+
+class Cat extends Animal {
+	makeSound(): string {
+		return 'Meow!'
+	}
+}
+
+function makeAnimalSound(animal: Animal) {
+	return animal.makeSound() // Works with any Animal subclass
+}
+
+makeAnimalSound(new Dog()) // "Woof!"
+makeAnimalSound(new Cat()) // "Meow!"
+```
+
+## Extends Keyword
+
+Use `extends` to create a subclass:
+
+```ts
+class Base {
+	method(): void {
+		console.log('Base method')
+	}
+}
+
+class Derived extends Base {
+	// Inherits method() from Base
+}
+```
+
+## Method Overriding
+
+Subclasses can override parent methods:
+
+```ts
+class Shape {
+	getArea(): number {
+		return 0
+	}
+}
+
+class Circle extends Shape {
+	radius: number
+
+	constructor(radius: number) {
+		super() // Call parent constructor
+		this.radius = radius
+	}
+
+	getArea(): number {
+		return Math.PI * this.radius ** 2
+	}
+}
+```
+
+## Super Keyword
+
+Use `super` to call parent class methods:
+
+```ts
+class Parent {
+	greet(): string {
+		return 'Hello'
+	}
+}
+
+class Child extends Parent {
+	greet(): string {
+		return super.greet() + ' from Child'
+	}
+}
+```
+
+## Polymorphism and Substitutability
+
+Polymorphism means "many forms." In object-oriented programming, it allows you to
+treat objects of different types uniformly through a common interface or base
+class.
+
+Polymorphism relies on the Liskov Substitution Principle: instances of a
+subclass can be used wherever instances of the parent class are expected.
+
+```ts
+class Shape {
+	getArea(): number {
+		return 0
+	}
+}
+
+class Circle extends Shape {
+	getArea(): number {
+		return Math.PI * this.radius ** 2
+	}
+}
+
+function printArea(shape: Shape) {
+	console.log(shape.getArea()) // Works with Shape or any subclass
+}
+
+printArea(new Circle(5)) // ✅ Circle is substitutable for Shape
+```
+
+## Polymorphism: OOP vs FP
+
+OOP achieves polymorphism through class hierarchies. Functional programming
+achieves it through discriminated unions:
+
+```ts
+// OOP approach - class hierarchy
+abstract class Shape {
+	abstract area(): number
+}
+class Circle extends Shape {
+	area() {
+		return Math.PI * this.radius ** 2
+	}
+}
+
+// FP approach - discriminated union
+type Shape =
+	| { type: 'circle'; radius: number }
+	| { type: 'rectangle'; width: number; height: number }
+
+const area = (s: Shape) =>
+	s.type === 'circle' ? Math.PI * s.radius ** 2 : s.width * s.height
+```
+
+**OOP** is extensible: add new classes without changing existing code.
+**FP** makes all cases explicit: add a new variant and the compiler tells you
+everywhere you need to handle it.
+
+<callout-info>
+	Inheritance creates an "is-a" relationship. A `Dog` is an `Animal`, so it
+	inherits all animal properties and can add dog-specific behavior. Polymorphism
+	enables you to write code that works with the base type, and automatically
+	works with all subtypes. This is powerful for building flexible systems.
+</callout-info>
+
+In this exercise, you'll use inheritance to build class hierarchies and
+polymorphism to write flexible code.

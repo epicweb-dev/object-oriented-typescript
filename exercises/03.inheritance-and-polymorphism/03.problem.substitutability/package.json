@@ -1,5 +1,5 @@
 {
-  "name": "exercises_05.composition-vs-inheritance_01.problem.when-to-use",
+  "name": "exercises_03.inheritance-and-polymorphism_03.problem.substitutability",
   "type": "module",
   "scripts": {
     "start": "npx @kentcdodds/log-module@latest ./index.ts",

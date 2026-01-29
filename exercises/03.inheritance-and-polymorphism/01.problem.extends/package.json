@@ -1,5 +1,5 @@
 {
-  "name": "exercises_04.polymorphism_01.problem.substitutability",
+  "name": "exercises_03.inheritance-and-polymorphism_01.problem.extends",
   "type": "module",
   "scripts": {
     "start": "npx @kentcdodds/log-module@latest ./index.ts",
