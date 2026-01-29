@@ -12,8 +12,8 @@ const VERBOSE = false
 const logVerbose = (...args) => (VERBOSE ? console.log(...args) : undefined)
 
 const workshopRoot = here('..')
-const examples = (await readDir(here('../examples'))).map((dir) =>
-	here(`../examples/${dir}`),
+const extras = (await readDir(here('../extra'))).map((dir) =>
+	here(`../extra/${dir}`),
 )
 const exercises = (await readDir(here('../exercises')))
 	.map((name) => here(`../exercises/${name}`))
@@ -29,12 +29,12 @@ const exerciseApps = (
 		}),
 	)
 ).flat()
-const exampleApps = (await readDir(here('../examples'))).map((dir) =>
-	here(`../examples/${dir}`),
+const extraApps = (await readDir(here('../extra'))).map((dir) =>
+	here(`../extra/${dir}`),
 )
-const apps = [...exampleApps, ...exerciseApps]
+const apps = [...extraApps, ...exerciseApps]
 
-const appsWithPkgJson = [...examples, ...apps].filter((app) => {
+const appsWithPkgJson = [...extras, ...apps].filter((app) => {
 	const pkgjsonPath = path.join(app, 'package.json')
 	return exists(pkgjsonPath)
 })
