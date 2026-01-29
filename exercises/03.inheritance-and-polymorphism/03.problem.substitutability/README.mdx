@@ -3,12 +3,18 @@
 👨‍💼 Let's build a media player that can play different types of media files.
 We'll use polymorphism to handle all media types uniformly.
 
+The `MediaFile`, `AudioFile`, and `VideoFile` classes are already defined.
+You'll create a `MediaPlayer` that works with any of them.
+
 🐨 Open <InlineFile file="index.ts" /> and:
 
-1. Create a `MediaFile` base class with a `play()` method
-2. Create `AudioFile` and `VideoFile` classes that extend `MediaFile`
-3. Each should override `play()` with its own implementation
-4. Create a `MediaPlayer` class with a method that accepts `MediaFile`
-5. Demonstrate that both `AudioFile` and `VideoFile` can be used interchangeably
+1. Create a `MediaPlayer` class with a `playFile()` method
+2. The method should accept a `MediaFile` parameter
+3. Call `media.play()` and return the result
+4. Test it with both `AudioFile` and `VideoFile` instances
+
+💰 The key insight: `playFile()` accepts `MediaFile`, but it works with any
+subclass (`AudioFile`, `VideoFile`) because of substitutability—subclasses
+can be used wherever their parent class is expected.
 
 📜 [TypeScript Handbook - Classes](https://www.typescriptlang.org/docs/handbook/2/classes.html)

@@ -25,7 +25,7 @@ class EmailService {
 // - Extends Logger
 // - Override log() to store messages in an array: #logs (private field)
 //   - Stores messages instead of printing them
-// - Method: getLogs() returns string[] to retrieve stored messages
+// - Method: getLogs() returns Array<string> to retrieve stored messages
 
 // Test MockLogger
 // const mockLogger = new MockLogger()

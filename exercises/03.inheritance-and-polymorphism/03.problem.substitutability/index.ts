@@ -1,32 +1,38 @@
 // Substitutability - Polymorphism
 
-// 🐨 Create a MediaFile base class with:
-// - Field: filename (string)
-// - Constructor that takes filename
-// - Method: play() returns string "Playing {filename}"
+class MediaFile {
+	filename: string
 
-// 🐨 Create an AudioFile class that extends MediaFile:
-// - Override play() to return "Playing audio: {filename}"
+	constructor(filename: string) {
+		this.filename = filename
+	}
 
-// Test AudioFile
-// const audio = new AudioFile('song.mp3')
-// console.log(audio)
+	play(): string {
+		return `Playing ${this.filename}`
+	}
+}
 
-// 🐨 Create a VideoFile class that extends MediaFile:
-// - Override play() to return "Playing video: {filename}"
+class AudioFile extends MediaFile {
+	play(): string {
+		return `Playing audio: ${this.filename}`
+	}
+}
 
-// Test VideoFile
-// const video = new VideoFile('movie.mp4')
-// console.log(video)
+class VideoFile extends MediaFile {
+	play(): string {
+		return `Playing video: ${this.filename}`
+	}
+}
 
 // 🐨 Create a MediaPlayer class with:
 // - Method: playFile(media: MediaFile) returns string
 //   - Calls media.play() and returns the result
 
 // Test MediaPlayer (polymorphism)
+// const audio = new AudioFile('song.mp3')
+// const video = new VideoFile('movie.mp4')
 // const player = new MediaPlayer()
 // console.log(player.playFile(audio)) // Should work - AudioFile is substitutable for MediaFile
 // console.log(player.playFile(video)) // Should work - VideoFile is substitutable for MediaFile
-// console.log(player)
 
 // export { MediaFile, AudioFile, VideoFile, MediaPlayer }

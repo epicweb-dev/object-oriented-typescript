@@ -1,28 +1,43 @@
 // Method Overriding
 
-// 🐨 Create a Shape base class with:
-// - Field: color (string)
-// - Constructor that takes color
-// - Method: getArea() returns 0
+class Shape {
+	color: string
 
-// 🐨 Create a Circle class that extends Shape:
-// - Field: radius (number)
-// - Constructor that takes color and radius
-// - Override getArea() to return Math.PI * radius ** 2
+	constructor(color: string) {
+		this.color = color
+	}
 
-// Test Circle
+	// 🐨 Add a getArea() method that returns 0
+}
+
+class Circle extends Shape {
+	radius: number
+
+	constructor(color: string, radius: number) {
+		super(color)
+		this.radius = radius
+	}
+
+	// 🐨 Override getArea() to return Math.PI * radius ** 2
+}
+
+class Rectangle extends Shape {
+	width: number
+	height: number
+
+	constructor(color: string, width: number, height: number) {
+		super(color)
+		this.width = width
+		this.height = height
+	}
+
+	// 🐨 Override getArea() to return width * height
+}
+
+// Test getArea methods
 // const circle = new Circle('red', 5)
-// console.log(circle.getArea()) // Should print ~78.54
-// console.log(circle)
-
-// 🐨 Create a Rectangle class that extends Shape:
-// - Fields: width (number), height (number)
-// - Constructor that takes color, width, and height
-// - Override getArea() to return width * height
-
-// Test Rectangle
 // const rectangle = new Rectangle('blue', 10, 20)
+// console.log(circle.getArea()) // Should print ~78.54
 // console.log(rectangle.getArea()) // Should print 200
-// console.log(rectangle)
 
 // export { Shape, Circle, Rectangle }

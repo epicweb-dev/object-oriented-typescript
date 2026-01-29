@@ -21,13 +21,13 @@ class EmailService {
 
 // MockLogger stores logs in memory (useful for testing)
 class MockLogger extends Logger {
-	#logs: string[] = []
+	#logs: Array<string> = []
 
 	log(message: string): void {
 		this.#logs.push(message)
 	}
 
-	getLogs(): string[] {
+	getLogs(): Array<string> {
 		return [...this.#logs] // Return a copy to prevent external mutation
 	}
 }

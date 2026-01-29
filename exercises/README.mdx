@@ -9,10 +9,9 @@ combine data and behavior. TypeScript makes OOP powerful with its type system.
 We'll cover:
 
 1. **Classes** - Fields, methods, constructors, private fields, and defaults
-2. **Interfaces and Classes** - Implementing contracts
-3. **Inheritance** - Extending classes and overriding methods
-4. **Polymorphism** - Substitutability and why it matters
-5. **Composition vs Inheritance** - Practical decision-making
+2. **Interfaces and Classes** - Implementing contracts and programming to abstractions
+3. **Inheritance and Polymorphism** - Extending classes, overriding methods, and substitutability
+4. **Composition vs Inheritance** - Dependency injection and practical decision-making
 
 ## OOP vs Functional Programming
 
@@ -24,7 +23,7 @@ should know the alternative:
 
 ```ts
 class ShoppingCart {
-	#items: Product[] = []
+	#items: Array<Product> = []
 	addItem(product: Product) {
 		this.#items.push(product)
 	}
@@ -37,7 +36,7 @@ class ShoppingCart {
 **FP organizes around functions** - data and transformations separate:
 
 ```ts
-type Cart = readonly Product[]
+type Cart = ReadonlyArray<Product>
 const addItem = (cart: Cart, product: Product): Cart => [...cart, product]
 const getTotal = (cart: Cart): number =>
 	cart.reduce((sum, p) => sum + p.price, 0)
