@@ -1,0 +1,7 @@
+{
+  "name": "extra_01.practice-everything",
+  "type": "module",
+  "scripts": {
+    "start": "npx @kentcdodds/log-module@latest ./index.ts"
+  }
+}

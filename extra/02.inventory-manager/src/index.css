@@ -1,0 +1,74 @@
+:root {
+	font-family:
+		'Inter',
+		system-ui,
+		-apple-system,
+		sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--bg-primary: #ffffff;
+	--bg-secondary: #f5f5f5;
+	--text-primary: #1a1a1a;
+	--text-secondary: #666666;
+	--border-color: #e0e0e0;
+	--accent: #3b82f6;
+	--accent-soft: #e0edff;
+	--warning: #f97316;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-primary: #1a1a1a;
+		--bg-secondary: #2d2d2d;
+		--text-primary: #f5f5f5;
+		--text-secondary: #a0a0a0;
+		--border-color: #404040;
+		--accent: #60a5fa;
+		--accent-soft: #1f2a44;
+		--warning: #fb923c;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background: var(--bg-primary);
+	color: var(--text-primary);
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+button {
+	border-radius: 8px;
+	border: 1px solid var(--border-color);
+	padding: 0.6rem 1.2rem;
+	font-size: 0.95rem;
+	font-weight: 600;
+	font-family: inherit;
+	background-color: var(--bg-secondary);
+	color: var(--text-primary);
+	cursor: pointer;
+	transition:
+		border-color 0.2s ease,
+		background-color 0.2s ease;
+}
+
+button:hover {
+	border-color: var(--accent);
+}

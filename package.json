@@ -39,7 +39,7 @@
   "license": "GPL-3.0-only",
   "workspaces": [
     "exercises/*/*",
-    "examples/*"
+    "extra/*"
   ],
   "engines": {
     "node": "^18.19.0 || >=20.5.0",

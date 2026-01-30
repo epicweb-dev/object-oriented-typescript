@@ -1,0 +1,48 @@
+# Inventory Manager
+
+👨‍💼 Welcome to the Inventory Manager! This is a practical React app that uses
+TypeScript classes for the core business logic. You'll implement the classes
+in a utilities module to power the UI.
+
+## Getting Started
+
+🐨 Open <InlineFile file="src/classes.ts" /> and implement the classes,
+interfaces, and methods. Every 🐨 comment is something for you to fill in.
+
+🐨 Open <InlineFile file="src/app.tsx" /> and look for TODO callouts in the UI.
+As you implement the class logic, those TODOs will turn into real data.
+
+## Running the App
+
+```sh
+npm run dev
+```
+
+## What to Implement
+
+### In `src/classes.ts`
+
+1. Inventory base class with private fields
+2. Interfaces for Sellable and Trackable behaviors
+3. Inheritance for Electronics, Clothing, and Perishable items
+4. Method overriding for descriptions and pricing
+5. Composition with logger implementations and InventoryManager
+
+### In `src/app.tsx`
+
+1. Verify the UI updates once class methods are implemented
+2. Check the TODO callouts to confirm you've completed each piece
+
+## Tips
+
+💰 Start with the base `InventoryItem` class. Many other classes depend on it.
+
+💰 When you implement pricing, be consistent about using `basePrice`,
+`quantity`, and `discountPercent`.
+
+💰 Use the logger classes to see the effects of dependency injection.
+
+## No Tests, No Solutions
+
+📝 This is practice time! There are no tests or solutions. Experiment, make
+mistakes, and build confidence by applying what you've learned.
