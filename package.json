@@ -5,7 +5,6 @@
     "title": "Object-Oriented TypeScript 🏛️",
     "subtitle": "Encapsulation and polymorphism, not syntax",
     "githubRepo": "https://github.com/epicweb-dev/object-oriented-typescript",
-    "subdomain": "object-oriented-typescript",
     "instructor": {
       "name": "Kent C. Dodds",
       "avatar": "/images/instructor.png",
@@ -14,7 +13,10 @@
     "product": {
       "host": "www.epicweb.dev",
       "displayName": "EpicWeb.dev",
-      "displayNameShort": "Epic Web"
+      "displayNameShort": "Epic Web",
+      "slug": "object-oriented-typescript",
+      "discordChannelId": "1161045224907341972",
+      "discordTags": ["1161046174439063593", "1474188032201588911"]
     },
     "appType": "export"
   },
