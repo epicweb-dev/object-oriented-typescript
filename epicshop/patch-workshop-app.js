@@ -44,6 +44,12 @@ const patchedRouteModuleNeedle = `  ErrorBoundary: ErrorBoundary$7,
   loader: loader$L
 }, Symbol.toStringTag`
 
+const routeManifestNeedle =
+	'"routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false,'
+
+const patchedRouteManifestNeedle =
+	'"routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": true,'
+
 export function patchWorkshopAppServerBuild(source) {
 	const hasActionFunction = source.includes(
 		`async function ${notFoundActionFunctionName}()`,
@@ -51,34 +57,57 @@ export function patchWorkshopAppServerBuild(source) {
 	const hasActionExport = source.includes(
 		`action: ${notFoundActionFunctionName}`,
 	)
+	const hasActionManifest = source.includes(patchedRouteManifestNeedle)
 
-	if (hasActionFunction && hasActionExport) {
+	if (hasActionFunction && hasActionExport && hasActionManifest) {
 		return { patched: false, source }
 	}
 
-	if (hasActionFunction || hasActionExport) {
+	if (hasActionFunction !== hasActionExport) {
 		throw new Error(
 			'Found a partial workshop-app splat action patch. Reinstall dependencies and rerun the patch.',
 		)
 	}
 
-	if (!source.includes(loaderEndNeedle)) {
-		throw new Error(
-			'Could not find the workshop-app splat route loader to patch.',
-		)
+	let patchedSource = source
+	let patched = false
+
+	if (!hasActionFunction) {
+		if (!patchedSource.includes(loaderEndNeedle)) {
+			throw new Error(
+				'Could not find the workshop-app splat route loader to patch.',
+			)
+		}
+
+		if (!patchedSource.includes(routeModuleNeedle)) {
+			throw new Error(
+				'Could not find the workshop-app splat route module to patch.',
+			)
+		}
+
+		patchedSource = patchedSource
+			.replace(loaderEndNeedle, patchedLoaderEndNeedle)
+			.replace(routeModuleNeedle, patchedRouteModuleNeedle)
+		patched = true
 	}
 
-	if (!source.includes(routeModuleNeedle)) {
-		throw new Error(
-			'Could not find the workshop-app splat route module to patch.',
+	if (!hasActionManifest) {
+		if (!patchedSource.includes(routeManifestNeedle)) {
+			throw new Error(
+				'Could not find the workshop-app splat route manifest entry to patch.',
+			)
+		}
+
+		patchedSource = patchedSource.replace(
+			routeManifestNeedle,
+			patchedRouteManifestNeedle,
 		)
+		patched = true
 	}
 
 	return {
-		patched: true,
-		source: source
-			.replace(loaderEndNeedle, patchedLoaderEndNeedle)
-			.replace(routeModuleNeedle, patchedRouteModuleNeedle),
+		patched,
+		source: patchedSource,
 	}
 }
 

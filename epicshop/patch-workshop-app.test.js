@@ -35,6 +35,7 @@ const route1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   default: $,
   loader: loader$L
 }, Symbol.toStringTag, { value: "Module" }));
+const serverManifest = { "routes": { "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true } } };
 `
 
 test('adds a 404 action to the workshop-app splat route module', () => {
@@ -43,6 +44,7 @@ test('adds a 404 action to the workshop-app splat route module', () => {
 	assert.equal(result.patched, true)
 	assert.match(result.source, /async function action\$splatNotFound\(\)/)
 	assert.match(result.source, /action: action\$splatNotFound/)
+	assert.match(result.source, /"routes\/\$": .*"hasAction": true/)
 })
 
 test('does not modify an already patched server build', () => {
@@ -65,4 +67,5 @@ test('patches the installed workshop-app build', async () => {
 
 	assert.equal(typeof result.patched, 'boolean')
 	assert.match(result.source, /action: action\$splatNotFound/)
+	assert.match(result.source, /"routes\/\$": .*"hasAction": true/)
 })
