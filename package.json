@@ -16,7 +16,10 @@
       "displayNameShort": "Epic Web",
       "slug": "object-oriented-typescript",
       "discordChannelId": "1161045224907341972",
-      "discordTags": ["1161046174439063593", "1474188032201588911"]
+      "discordTags": [
+        "1161046174439063593",
+        "1474188032201588911"
+      ]
     },
     "appType": "export"
   },
@@ -44,7 +47,7 @@
     "extra/*"
   ],
   "engines": {
-    "node": "^18.19.0 || >=20.5.0",
+    "node": ">=22",
     "npm": ">=8.16.0",
     "git": ">=2.18.0"
   },
